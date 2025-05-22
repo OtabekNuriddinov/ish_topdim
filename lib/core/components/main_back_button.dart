@@ -1,22 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:ish_topdim/core/theme/themes.dart';
 import 'package:sizer/sizer.dart';
 
-import '../theme/themes.dart';
+class MainBackButton extends StatelessWidget {
+  final VoidCallback onPressed;
+  const MainBackButton({super.key, required this.onPressed,});
 
-class MyBackButton extends StatelessWidget{
-  final PageController controller;
-
-  const MyBackButton({super.key, required this.controller});
   @override
   Widget build(BuildContext context) {
     return Material(
       child: InkWell(
-        onTap: (){
-          controller.previousPage(
-            duration: const Duration(milliseconds: 400),
-            curve: Curves.easeInOut,
-          );
-        },
+        onTap: onPressed,
         child: Container(
           margin: EdgeInsets.all(1.5.h),
           decoration: BoxDecoration(
@@ -25,7 +19,7 @@ class MyBackButton extends StatelessWidget{
           ),
           child: Icon(
             size: 3.h,
-            Icons.arrow_back, color: Themes.black57,
+            Icons.arrow_back, color: Colors.black,
           ),
         ),
       ),

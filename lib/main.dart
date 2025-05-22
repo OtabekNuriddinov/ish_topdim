@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
     return Sizer(
       builder: (context, orientation, screenType){
         return MaterialApp.router(
+          debugShowCheckedModeBanner: false,
           title: "Ish Topdim",
           routerConfig: router,
         );

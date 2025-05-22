@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ish_topdim/core/components/my_back_button.dart';
 import 'package:ish_topdim/core/theme/themes.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../../core/components/secondary_elevated_button.dart';
+import '../components/onboard_back_button.dart';
 
 
 class OnBoarding extends StatefulWidget {
@@ -42,7 +42,7 @@ class _OnBoardingState extends State<OnBoarding> {
       appBar: AppBar(
         leading:
             _currentIndex >= 1
-                ? MyBackButton(controller: _controller)
+                ? OnBoardBackButton(controller: _controller)
                 : SizedBox.shrink(),
         actions: [
           _currentIndex == 0
@@ -107,7 +107,7 @@ class _OnBoardingState extends State<OnBoarding> {
             ),
             SizedBox(height: 4.h),
             SecondaryElevatedButton(
-                text: "keyingis",
+                text: "keyingisi",
                 color: Themes.black57,
                 onPressed: (){
                   if (_currentIndex < list.length - 1) {
@@ -116,7 +116,7 @@ class _OnBoardingState extends State<OnBoarding> {
                       curve: Curves.easeInOut,
                     );
                   } else {
-                    /// bir qadam qoldi page ga o'tamiz
+                    context.go('/onboarding/oneStep');
                   }
                 }
             ),

@@ -32,9 +32,9 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
 
     _animationController.forward();
 
-    Future.delayed(const Duration(milliseconds: 3000), (){
+    Future.delayed(const Duration(milliseconds: 2500), (){
       if(mounted){
-        /// onboarding ga o'tamiz
+        context.go('/onboarding');
       }
     });
   }
