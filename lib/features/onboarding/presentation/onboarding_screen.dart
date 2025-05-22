@@ -108,7 +108,7 @@ class _OnBoardingState extends State<OnBoarding> {
             SizedBox(height: 4.h),
             SecondaryElevatedButton(
                 text: "keyingis",
-                color: Themes.textColor,
+                color: Themes.black57,
                 onPressed: (){
                   if (_currentIndex < list.length - 1) {
                     _controller.nextPage(
