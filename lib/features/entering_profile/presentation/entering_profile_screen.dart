@@ -36,7 +36,7 @@ class _EnteringProfileScreenState extends State<EnteringProfileScreen> {
       ),
       body: Center(
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 2.h, horizontal: 5.w),
+          padding: EdgeInsets.symmetric(vertical: 2.h, horizontal: 6.w),
           child: Form(
             key: _key,
             child: Column(
@@ -115,7 +115,8 @@ class _EnteringProfileScreenState extends State<EnteringProfileScreen> {
                 SizedBox(height: 4.h),
                 MainElevatedButton(
                     text: "Kirish",
-                    color: Themes.black57
+                    color: Themes.black57,
+                  onPressed: (){},
                 ),
                 SizedBox(height: 8.h),
                 Row(

@@ -5,9 +5,11 @@ import 'package:sizer/sizer.dart';
 class MainElevatedButton extends StatelessWidget {
   final String text;
   final Color color;
+  final VoidCallback onPressed;
   const MainElevatedButton({
     required this.text,
     required this.color,
+    required this.onPressed,
     super.key,
   });
 
@@ -21,8 +23,7 @@ class MainElevatedButton extends StatelessWidget {
                 borderRadius: BorderRadius.circular(7)
             )
         ),
-        onPressed: (){
-        },
+        onPressed: onPressed,
         child: Text(text, style: GoogleFonts.inter(
             fontWeight: FontWeight.w500,
             fontSize: 16.sp,

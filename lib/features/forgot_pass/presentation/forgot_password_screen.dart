@@ -33,7 +33,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
       ),
       body: Center(
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 2.h, horizontal: 5.w),
+          padding: EdgeInsets.symmetric(vertical: 2.h, horizontal: 6.w),
           child: Form(
             key: _key,
             child: Column(
@@ -79,7 +79,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                 SizedBox(height: 4.h),
                 MainElevatedButton(
                     text: "Kirish",
-                    color: Themes.black57
+                    color: Themes.black57,
+                  onPressed: (){},
                 ),
                 SizedBox(height: 8.h),
                 Align(

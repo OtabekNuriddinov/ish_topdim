@@ -32,7 +32,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
       ),
       body: Center(
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 2.h, horizontal: 5.w),
+          padding: EdgeInsets.symmetric(vertical: 2.h, horizontal: 6.w),
           child: Form(
             key: _key,
             child: Column(
@@ -117,6 +117,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 MainElevatedButton(
                   color: Themes.black57,
                   text: "ro'yxatdan o'tish",
+                  onPressed: (){},
                 ),
                 SizedBox(height: 8.h),
                 Row(
