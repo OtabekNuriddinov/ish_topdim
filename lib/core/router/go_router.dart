@@ -1,7 +1,7 @@
 import 'package:go_router/go_router.dart';
 
-import '../../presentation/screen/onboarding/onboarding_screen.dart';
-import '../../presentation/screen/splash/splash_screen.dart';
+import '../../features/onboarding/presentation/onboarding_screen.dart';
+import '../../features/splash/presentation/splash_screen.dart';
 
 
 final GoRouter router = GoRouter(
@@ -14,9 +14,7 @@ final GoRouter router = GoRouter(
       GoRoute(
           path: '/onboarding',
           builder: (context, state) => const OnBoarding(),
-          routes: [
-
-          ]
+          routes: []
       ),
 
     ]

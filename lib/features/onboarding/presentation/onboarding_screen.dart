@@ -5,7 +5,7 @@ import 'package:ish_topdim/core/components/my_back_button.dart';
 import 'package:ish_topdim/core/theme/themes.dart';
 import 'package:sizer/sizer.dart';
 
-import '../../../core/components/secondary_elevated_button.dart';
+import '../../../../core/components/secondary_elevated_button.dart';
 
 
 class OnBoarding extends StatefulWidget {
