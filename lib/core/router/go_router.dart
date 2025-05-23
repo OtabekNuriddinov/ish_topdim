@@ -30,7 +30,8 @@ final GoRouter router = GoRouter(
           routes: [
             GoRoute(
                 path: 'registration',
-                builder: (context, state) => const RegistrationScreen()),
+                builder: (context, state) => const RegistrationScreen(),
+            ),
             GoRoute(
               path: 'entering',
               builder: (context, state) => const EnteringProfileScreen(),

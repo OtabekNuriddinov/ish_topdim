@@ -36,66 +36,68 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
           padding: EdgeInsets.symmetric(vertical: 2.h, horizontal: 6.w),
           child: Form(
             key: _key,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Align(
-                  alignment: Alignment.center,
-                  child: Text(
-                    "Parol esdan chiqdimi ?",
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.inter(
-                      fontWeight: FontWeight.w800,
-                      color: Themes.black57,
-                      fontSize: 21.sp,
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      "Parol esdan chiqdimi ?",
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.inter(
+                        fontWeight: FontWeight.w800,
+                        color: Themes.black57,
+                        fontSize: 21.sp,
+                      ),
                     ),
                   ),
-                ),
-                Align(
-                  alignment: Alignment.center,
-                  child: Text(
-                    "Esingizda qoladigan parol yozing!",
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.inter(
-                      fontWeight: FontWeight.w500,
-                      color: Themes.black57,
-                      fontSize: 15.sp,
+                  Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      "Esingizda qoladigan parol yozing!",
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.inter(
+                        fontWeight: FontWeight.w500,
+                        color: Themes.black57,
+                        fontSize: 15.sp,
+                      ),
                     ),
                   ),
-                ),
-                SizedBox(height: 4.h),
-                Text("Email",
-                  style: GoogleFonts.inter(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 17.sp,
+                  SizedBox(height: 4.h),
+                  Text("Email",
+                    style: GoogleFonts.inter(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 17.sp,
+                    ),
                   ),
-                ),
-                SizedBox(height: 1.h),
-                MainFormField(
-                  hint: "Elektron manzilingiz",
-                  controller: emailController,
-                ),
-                SizedBox(height: 4.h),
-                MainElevatedButton(
-                    text: "Kirish",
-                    color: Themes.black57,
-                  onPressed: (){
-                      context.push("/onboarding/oneStep/entering/forgotPass/otp");
-                  },
-                ),
-                SizedBox(height: 10.h),
-                Align(
-                  alignment: Alignment.center,
-                  child: MyRichText(
-                      firstText: "Orqaga qaytish ",
-                      secondText: "ORQAGA",
-                      onPressed: (){
-                        context.pop(context);
-                      }
+                  SizedBox(height: 1.h),
+                  MainFormField(
+                    hint: "Elektron manzilingiz",
+                    controller: emailController,
                   ),
-                )
-              ],
+                  SizedBox(height: 4.h),
+                  MainElevatedButton(
+                      text: "Kirish",
+                      color: Themes.black57,
+                    onPressed: (){
+                        context.push("/onboarding/oneStep/entering/forgotPass/otp");
+                    },
+                  ),
+                  SizedBox(height: 10.h),
+                  Align(
+                    alignment: Alignment.center,
+                    child: MyRichText(
+                        firstText: "Orqaga qaytish ",
+                        secondText: "ORQAGA",
+                        onPressed: (){
+                          context.pop(context);
+                        }
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
         ),

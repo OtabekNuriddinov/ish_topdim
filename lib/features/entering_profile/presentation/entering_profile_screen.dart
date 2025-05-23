@@ -39,120 +39,122 @@ class _EnteringProfileScreenState extends State<EnteringProfileScreen> {
           padding: EdgeInsets.symmetric(vertical: 2.h, horizontal: 6.w),
           child: Form(
             key: _key,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Align(
-                  alignment: Alignment.center,
-                  child: Text(
-                    "Profilga kirish",
-                    textAlign: TextAlign.center,
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      "Profilga kirish",
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.inter(
+                        fontWeight: FontWeight.w800,
+                        color: Themes.black57,
+                        fontSize: 21.sp,
+                      ),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                        "platformadan foydalanish\nuchun Profilingizga kiring",
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.inter(
+                        fontWeight: FontWeight.w500,
+                        color: Themes.black57,
+                        fontSize: 15.sp,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 4.h),
+                  Text("Email",
                     style: GoogleFonts.inter(
-                      fontWeight: FontWeight.w800,
-                      color: Themes.black57,
-                      fontSize: 21.sp,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 17.sp,
                     ),
                   ),
-                ),
-                Align(
-                  alignment: Alignment.center,
-                  child: Text(
-                      "platformadan foydalanish\nuchun Profilingizga kiring",
-                    textAlign: TextAlign.center,
+                  SizedBox(height: 1.h),
+                  MainFormField(
+                      hint: "Elektron manzilingiz",
+                    controller: emailController,
+                  ),
+                  SizedBox(height: 2.h),
+                  Text("Parol",
                     style: GoogleFonts.inter(
-                      fontWeight: FontWeight.w500,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 17.sp,
+                    ),
+                  ),
+                  SizedBox(height: 1.h),
+                  MainFormField(
+                      hint: "Yangi parol",
+                      controller: passwordController,
+                    isSecret: true,
+                  ),
+                  SizedBox(height: 0.7.h),
+                  RichText(
+                      text: TextSpan(
+                        children: [
+                          TextSpan(
+                            text: "Parol esdan chidimi ?",
+                            style: GoogleFonts.inter(
+                              decoration: TextDecoration.underline,
+                              fontWeight: FontWeight.w600,
+                              fontSize: 16.sp,
+                              color: Themes.black57
+                            ),
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = (){
+                               context.push("/onboarding/oneStep/entering/forgotPass");
+                              }
+                          )
+                        ]
+                      )
+                  ),
+                  SizedBox(height: 4.h),
+                  MainElevatedButton(
+                      text: "Kirish",
                       color: Themes.black57,
-                      fontSize: 15.sp,
-                    ),
+                    onPressed: (){
+                        context.go("/home");
+                    },
                   ),
-                ),
-                SizedBox(height: 4.h),
-                Text("Email",
-                  style: GoogleFonts.inter(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 17.sp,
+                  SizedBox(height: 8.h),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SocialIcons(
+                        iconPath: "assets/icons/google_icon.svg",
+                        onPressed: (){
+                        },
+                      ),
+                      SizedBox(width: 4.w),
+                      SocialIcons(
+                        iconPath: "assets/icons/apple_icon.svg",
+                        onPressed: (){},
+                      ),
+                      SizedBox(width: 4.w),
+                      SocialIcons(
+                          iconPath: "assets/icons/facebook_icon.svg",
+                          onPressed: (){}
+                      ),
+                    ],
                   ),
-                ),
-                SizedBox(height: 1.h),
-                MainFormField(
-                    hint: "Elektron manzilingiz",
-                  controller: emailController,
-                ),
-                SizedBox(height: 2.h),
-                Text("Parol",
-                  style: GoogleFonts.inter(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 17.sp,
-                  ),
-                ),
-                SizedBox(height: 1.h),
-                MainFormField(
-                    hint: "Yangi parol",
-                    controller: passwordController,
-                  isSecret: true,
-                ),
-                SizedBox(height: 0.7.h),
-                RichText(
-                    text: TextSpan(
-                      children: [
-                        TextSpan(
-                          text: "Parol esdan chidimi ?",
-                          style: GoogleFonts.inter(
-                            decoration: TextDecoration.underline,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 16.sp,
-                            color: Themes.black57
-                          ),
-                          recognizer: TapGestureRecognizer()
-                            ..onTap = (){
-                             context.push("/onboarding/oneStep/entering/forgotPass");
-                            }
-                        )
-                      ]
-                    )
-                ),
-                SizedBox(height: 4.h),
-                MainElevatedButton(
-                    text: "Kirish",
-                    color: Themes.black57,
-                  onPressed: (){
-                      context.go("/home");
-                  },
-                ),
-                SizedBox(height: 8.h),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SocialIcons(
-                      iconPath: "assets/icons/google_icon.svg",
-                      onPressed: (){
-                      },
+                  SizedBox(height: 1.7.h),
+                  Align(
+                    alignment: Alignment.center,
+                    child: MyRichText(
+                        firstText: "sizda profil mavjud emasmi ? ",
+                        secondText: "QAYTISH",
+                        onPressed: (){
+                          context.pop(context);
+                        }
                     ),
-                    SizedBox(width: 4.w),
-                    SocialIcons(
-                      iconPath: "assets/icons/apple_icon.svg",
-                      onPressed: (){},
-                    ),
-                    SizedBox(width: 4.w),
-                    SocialIcons(
-                        iconPath: "assets/icons/facebook_icon.svg",
-                        onPressed: (){}
-                    ),
-                  ],
-                ),
-                SizedBox(height: 1.7.h),
-                Align(
-                  alignment: Alignment.center,
-                  child: MyRichText(
-                      firstText: "sizda profil mavjud emasmi ? ",
-                      secondText: "QAYTISH",
-                      onPressed: (){
-                        context.pop(context);
-                      }
-                  ),
-                )
-              ],
+                  )
+                ],
+              ),
             ),
           ),
         ),

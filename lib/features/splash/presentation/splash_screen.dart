@@ -10,40 +10,58 @@ class SplashScreen extends StatefulWidget {
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderStateMixin{
+class _SplashScreenState extends State<SplashScreen>
+    with TickerProviderStateMixin {
 
-  late AnimationController _animationController;
+  late AnimationController _fadeController;
+  late AnimationController _rotationController;
+  late AnimationController _scaleController;
+
   late Animation<double> _opacityAnimation;
+  late Animation<double> _rotationAnimation;
+  late Animation<double> _scaleAnimation;
 
   @override
   void initState() {
     super.initState();
-    _animationController = AnimationController(
-        vsync: this,
-        duration: const Duration(milliseconds: 1500)
-    );
+
+    _fadeController = AnimationController(
+        vsync: this, duration: const Duration(milliseconds: 800));
+
+    _rotationController = AnimationController(
+        vsync: this, duration: const Duration(milliseconds: 1300));
+
+    _scaleController = AnimationController(
+        vsync: this, duration: const Duration(milliseconds: 600));
 
     _opacityAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
-        CurvedAnimation(
-            parent: _animationController,
-            curve: Curves.easeIn
-        )
+        CurvedAnimation(parent: _fadeController, curve: Curves.easeIn));
+
+    _rotationAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
+      CurvedAnimation(
+        parent: _rotationController,
+        curve: Curves.easeInOut,
+      ),
     );
 
-    _animationController.forward();
+    _scaleAnimation = Tween<double>(begin: 1.0, end: 1.1).animate(
+      CurvedAnimation(
+        parent: _scaleController,
+        curve: Curves.elasticOut,
+      ),
+    );
 
-    Future.delayed(const Duration(milliseconds: 2500), (){
-      if(mounted){
-        context.go('/onboarding');
-      }
-    });
+    startAnimations();
   }
 
   @override
   void dispose() {
-    _animationController.dispose();
+    _fadeController.dispose();
+    _rotationController.dispose();
+    _scaleController.dispose();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,11 +72,23 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SvgPicture.asset(
-                width: 27.0.w,
-                height: 14.0.h,
-                "assets/images/main_logo.svg",
-              ),
+              AnimatedBuilder(
+                  animation: Listenable.merge(
+                    [_rotationAnimation, _scaleAnimation],
+                  ),
+                  builder: (context, child) {
+                    return Transform.scale(
+                      scale: _scaleAnimation.value,
+                      child: Transform.rotate(
+                        angle: _rotationAnimation.value * 2 * 3.14159,
+                        child: SvgPicture.asset(
+                          width: 27.0.w,
+                          height: 14.0.h,
+                          "assets/images/main_logo.svg",
+                        ),
+                      ),
+                    );
+                  }),
               SizedBox(height: 2.5.h),
               SvgPicture.asset(
                 width: 80.0.w,
@@ -71,5 +101,18 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
       ),
     );
   }
-}
 
+  void startAnimations() async {
+    _fadeController.forward();
+    await Future.delayed(const Duration(milliseconds: 300));
+
+    _scaleController.forward();
+    await _rotationController.forward();
+
+    await Future.delayed(const Duration(milliseconds: 400));
+
+    if (mounted) {
+      context.go('/onboarding');
+    }
+  }
+}
