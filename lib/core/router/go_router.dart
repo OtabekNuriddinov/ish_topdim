@@ -2,6 +2,7 @@ import 'package:go_router/go_router.dart';
 import 'package:ish_topdim/features/entering_profile/presentation/entering_profile_screen.dart';
 import 'package:ish_topdim/features/home/presentation/home_screen.dart';
 import 'package:ish_topdim/features/one_step/presentation/one_step_screen.dart';
+import 'package:ish_topdim/features/otp/presentation/OTPScreen.dart';
 import 'package:ish_topdim/features/registration/presentation/registration_screen.dart';
 
 import '../../features/forgot_pass/presentation/forgot_password_screen.dart';
@@ -34,7 +35,13 @@ final GoRouter router = GoRouter(
                   routes: [
                     GoRoute(
                         path: 'forgotPass',
-                      builder: (context, state) => const ForgotPasswordScreen()
+                      builder: (context, state) => const ForgotPasswordScreen(),
+                      routes: [
+                        GoRoute(
+                            path: 'otp',
+                          builder: (context, state) => const OTPScreen()
+                        )
+                      ]
                     )
                   ]
                 )

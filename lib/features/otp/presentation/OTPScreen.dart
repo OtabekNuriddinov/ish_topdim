@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ish_topdim/core/components/main_back_button.dart';
 import 'package:ish_topdim/core/components/main_elevated_button.dart';
@@ -43,7 +44,9 @@ class _OTPScreenState extends State<OTPScreen> {
     return Scaffold(
       appBar: AppBar(
         leading: MainBackButton(
-          onPressed: () {},
+          onPressed: () {
+            context.pop(context);
+          },
         ),
       ),
       body: Column(
@@ -193,7 +196,8 @@ class _OTPScreenState extends State<OTPScreen> {
                       )
                     ],
                   ),
-                )),
+                ),
+            ),
           )
         ],
       ),

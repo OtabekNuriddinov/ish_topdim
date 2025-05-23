@@ -106,7 +106,7 @@ class _EnteringProfileScreenState extends State<EnteringProfileScreen> {
                           ),
                           recognizer: TapGestureRecognizer()
                             ..onTap = (){
-                            print("Bosildi");
+                             context.push("/onboarding/oneStep/entering/forgotPass");
                             }
                         )
                       ]
@@ -145,7 +145,9 @@ class _EnteringProfileScreenState extends State<EnteringProfileScreen> {
                   child: MyRichText(
                       firstText: "sizda profil mavjud emasmi ? ",
                       secondText: "QAYTISH",
-                      onPressed: (){}
+                      onPressed: (){
+                        context.pop(context);
+                      }
                   ),
                 )
               ],

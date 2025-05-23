@@ -80,13 +80,15 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                 MainElevatedButton(
                     text: "Kirish",
                     color: Themes.black57,
-                  onPressed: (){},
+                  onPressed: (){
+                      context.push("/onboarding/oneStep/entering/forgotPass/otp");
+                  },
                 ),
-                SizedBox(height: 8.h),
+                SizedBox(height: 10.h),
                 Align(
                   alignment: Alignment.center,
                   child: MyRichText(
-                      firstText: "Orqaga qaytish",
+                      firstText: "Orqaga qaytish ",
                       secondText: "ORQAGA",
                       onPressed: (){
                         context.pop(context);
