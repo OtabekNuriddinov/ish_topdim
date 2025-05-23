@@ -89,12 +89,12 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 ),
                 SizedBox(height: 1.h),
                 SizedBox(
-                    height: 7.h,
-                    child: MainFormField(
-                      hint: "Elekron manzilingiz",
-                      isSecret: false,
-                      controller: emailController,
-                    ),
+                  height: 7.h,
+                  child: MainFormField(
+                    hint: "Elekron manzilingiz",
+                    isSecret: false,
+                    controller: emailController,
+                  ),
                 ),
                 SizedBox(height: 2.h),
                 Text(
@@ -106,18 +106,20 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 ),
                 SizedBox(height: 1.h),
                 SizedBox(
-                    height: 7.h,
-                    child: MainFormField(
-                      hint: "Yangi parol",
-                      isSecret: true,
-                      controller: passwordController,
-                    ),
+                  height: 7.h,
+                  child: MainFormField(
+                    hint: "Yangi parol",
+                    isSecret: true,
+                    controller: passwordController,
+                  ),
                 ),
                 SizedBox(height: 5.h),
                 MainElevatedButton(
                   color: Themes.black57,
                   text: "ro'yxatdan o'tish",
-                  onPressed: (){},
+                  onPressed: () {
+                    context.go("/home");
+                  },
                 ),
                 SizedBox(height: 8.h),
                 Row(
@@ -125,19 +127,17 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   children: [
                     SocialIcons(
                       iconPath: "assets/icons/google_icon.svg",
-                      onPressed: (){
-                      },
+                      onPressed: () {},
                     ),
                     SizedBox(width: 4.w),
                     SocialIcons(
-                        iconPath: "assets/icons/apple_icon.svg",
-                        onPressed: (){},
+                      iconPath: "assets/icons/apple_icon.svg",
+                      onPressed: () {},
                     ),
                     SizedBox(width: 4.w),
                     SocialIcons(
                         iconPath: "assets/icons/facebook_icon.svg",
-                        onPressed: (){}
-                    ),
+                        onPressed: () {}),
                   ],
                 ),
                 SizedBox(height: 1.7.h),
@@ -146,8 +146,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   child: MyRichText(
                     firstText: "sizda profil mavjudmi ? ",
                     secondText: "KIRISH",
-                    onPressed: (){
-                    },
+                    onPressed: () {},
                   ),
                 )
               ],
@@ -158,7 +157,3 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     );
   }
 }
-
-
-
-

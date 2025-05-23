@@ -116,7 +116,9 @@ class _EnteringProfileScreenState extends State<EnteringProfileScreen> {
                 MainElevatedButton(
                     text: "Kirish",
                     color: Themes.black57,
-                  onPressed: (){},
+                  onPressed: (){
+                      context.go("/home");
+                  },
                 ),
                 SizedBox(height: 8.h),
                 Row(

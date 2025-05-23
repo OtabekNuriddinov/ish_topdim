@@ -235,6 +235,7 @@ class _OTPScreenState extends State<OTPScreen> {
   void _onConfirmPressed() {
     String otpCode = otp.join('');
     print("OTP kodi: $otpCode");
+    context.go("/home");
   }
 }
 

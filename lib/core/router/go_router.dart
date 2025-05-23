@@ -9,6 +9,7 @@ import 'package:ish_topdim/features/registration/presentation/registration_scree
 import '../../features/forgot_pass/presentation/forgot_password_screen.dart';
 import '../../features/main/presentation/main_page.dart';
 import '../../features/onboarding/presentation/onboarding_screen.dart';
+import '../../features/otp/presentation/OTPScreen.dart';
 import '../../features/splash/presentation/splash_screen.dart';
 
 final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>();
@@ -16,7 +17,7 @@ final GlobalKey<NavigatorState> shellNavigatorKey = GlobalKey<NavigatorState>();
 
 final GoRouter router = GoRouter(
   navigatorKey: rootNavigatorKey,
-  initialLocation: '/home',
+  initialLocation: '/splash',
   routes: [
     GoRoute(path: '/splash', builder: (context, state) => const SplashScreen()),
     GoRoute(
@@ -35,8 +36,15 @@ final GoRouter router = GoRouter(
               builder: (context, state) => const EnteringProfileScreen(),
               routes: [
                 GoRoute(
-                    path: 'forgotPass',
-                    builder: (context, state) => const ForgotPasswordScreen()),
+                  path: 'forgotPass',
+                  builder: (context, state) => const ForgotPasswordScreen(),
+                  routes: [
+                    GoRoute(
+                      path: "otp",
+                      builder: (context , state)=> const OTPScreen()
+                    )
+                  ],
+                ),
               ],
             ),
           ],
@@ -66,7 +74,6 @@ final GoRouter router = GoRouter(
           path: '/favorite',
           builder: (context, state) => const FavoritesPage(),
         ),
-
       ],
     ),
   ],
