@@ -24,7 +24,7 @@ class OnBoardBackButton extends StatelessWidget{
             shape: BoxShape.circle,
           ),
           child: Icon(
-            size: 3.h,
+            size: 2.h,
             Icons.arrow_back, color: Themes.black57,
           ),
         ),

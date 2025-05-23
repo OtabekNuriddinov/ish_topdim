@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../core/theme/themes.dart';
 
-AppBar homeAppBar(){
+AppBar homeAppBar({required BuildContext context}){
   return AppBar(
-    backgroundColor: Themes.white,
     leadingWidth: 100,
     toolbarHeight: 60,
     leading: Column(
@@ -25,7 +25,9 @@ AppBar homeAppBar(){
     ),
     actions: [
       IconButton.filled(
-        onPressed: () {},
+        onPressed: () {
+          context.go("/home/notifications");
+        },
         icon: const Icon(
           CupertinoIcons.bell_solid,
           color: Colors.white,

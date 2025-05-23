@@ -11,6 +11,7 @@ class CustomBottomAppBar extends StatefulWidget {
 
 class _CustomBottomAppBarState extends State<CustomBottomAppBar> {
   int _selectedIndex = 0;
+
   @override
   void initState() {
     super.initState();
@@ -28,8 +29,7 @@ class _CustomBottomAppBarState extends State<CustomBottomAppBar> {
   Widget build(BuildContext context) {
     return BottomAppBar(
       height: 90,
-
-      color: Colors.white,
+      color: Colors.transparent,
       child: Card(
         elevation: 10,
         margin: EdgeInsets.zero,
@@ -72,8 +72,7 @@ class _CustomBottomAppBarState extends State<CustomBottomAppBar> {
                 final isSelected = _selectedIndex == index;
 
                 return TweenAnimationBuilder<double>(
-                  tween:
-                      Tween<double>(begin: 1.0, end: isSelected ? 1.3 : 1.0),
+                  tween: Tween<double>(begin: 1.0, end: isSelected ? 1.3 : 1.0),
                   duration: const Duration(milliseconds: 200),
                   curve: Curves.easeInOut,
                   builder: (context, scale, child) {

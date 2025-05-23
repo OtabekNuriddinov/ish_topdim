@@ -7,6 +7,7 @@ import 'package:ish_topdim/features/one_step/presentation/one_step_screen.dart';
 import 'package:ish_topdim/features/registration/presentation/registration_screen.dart';
 
 import '../../features/forgot_pass/presentation/forgot_password_screen.dart';
+import '../../features/home/notifications/presentation/notifications_screen.dart';
 import '../../features/main/presentation/main_page.dart';
 import '../../features/onboarding/presentation/onboarding_screen.dart';
 import '../../features/otp/presentation/OTPScreen.dart';
@@ -17,7 +18,7 @@ final GlobalKey<NavigatorState> shellNavigatorKey = GlobalKey<NavigatorState>();
 
 final GoRouter router = GoRouter(
   navigatorKey: rootNavigatorKey,
-  initialLocation: '/splash',
+  initialLocation: '/home/notifications',
   routes: [
     GoRoute(path: '/splash', builder: (context, state) => const SplashScreen()),
     GoRoute(
@@ -29,8 +30,8 @@ final GoRouter router = GoRouter(
           builder: (context, state) => const Another1Step(),
           routes: [
             GoRoute(
-                path: 'registration',
-                builder: (context, state) => const RegistrationScreen(),
+              path: 'registration',
+              builder: (context, state) => const RegistrationScreen(),
             ),
             GoRoute(
               path: 'entering',
@@ -41,9 +42,8 @@ final GoRouter router = GoRouter(
                   builder: (context, state) => const ForgotPasswordScreen(),
                   routes: [
                     GoRoute(
-                      path: "otp",
-                      builder: (context , state)=> const OTPScreen()
-                    )
+                        path: "otp",
+                        builder: (context, state) => const OTPScreen())
                   ],
                 ),
               ],
@@ -70,6 +70,13 @@ final GoRouter router = GoRouter(
         GoRoute(
           path: '/home',
           builder: (context, state) => const HomeScreen(),
+          routes: [
+            GoRoute(
+              parentNavigatorKey: rootNavigatorKey,
+              path: "notifications",
+              builder: (context , state)=> const NotificationsScreen(),
+            ),
+          ],
         ),
         GoRoute(
           path: '/favorite',

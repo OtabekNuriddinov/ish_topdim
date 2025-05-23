@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ish_topdim/core/components/pp_image_card.dart';
 import 'package:sizer/sizer.dart';
 
 import '../theme/text_styles.dart';
@@ -50,19 +51,7 @@ class JobCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Card(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12)),
-                      clipBehavior: Clip.antiAlias,
-                      child: SizedBox(
-                        height: 50,
-                        width: 50,
-                        child: Image.network(
-                          companyImageUrl,
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ),
+                    PpImageCard(imageUrl: companyImageUrl),
                     Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
