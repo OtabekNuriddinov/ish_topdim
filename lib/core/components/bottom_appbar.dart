@@ -11,6 +11,11 @@ class CustomBottomAppBar extends StatefulWidget {
 
 class _CustomBottomAppBarState extends State<CustomBottomAppBar> {
   int _selectedIndex = 0;
+  @override
+  void initState() {
+    super.initState();
+    widget.onChanged(0);
+  }
 
   void _onItemTapped(int index) {
     setState(() {
