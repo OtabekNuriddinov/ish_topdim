@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
@@ -6,9 +7,22 @@ import '../theme/text_styles.dart';
 import '../theme/themes.dart';
 
 class JobCard extends StatelessWidget {
-  const JobCard({super.key, required this.agency, required this.town, required this.job , required this.keySkills, required this.companyImageUrl, required this.salary, required this.createdTime, required this.volunteers,});
+  const JobCard({
+    super.key,
+    required this.agency,
+    required this.town,
+    required this.job,
+    required this.keySkills,
+    required this.companyImageUrl,
+    required this.salary,
+    required this.createdTime,
+    required this.volunteers,
+    this.isFavorite = false,
+  });
+
   final String agency;
   final String job;
+  final bool isFavorite;
   final double salary;
   final int volunteers;
   final String companyImageUrl;
@@ -19,7 +33,7 @@ class JobCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Card(
+    return Card(
       color: Themes.white,
       elevation: 10,
       child: SizedBox(
@@ -38,16 +52,15 @@ class JobCard extends StatelessWidget {
                   children: [
                     Card(
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12)
-                      ),
+                          borderRadius: BorderRadius.circular(12)),
                       clipBehavior: Clip.antiAlias,
                       child: SizedBox(
                         height: 50,
                         width: 50,
                         child: Image.network(
                           companyImageUrl,
-                            fit: BoxFit.cover,
-                            ),
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                     Column(
@@ -63,7 +76,8 @@ class JobCard extends StatelessWidget {
                         )
                       ],
                     ),
-                    Spacer()
+                    const Spacer(),
+                    isFavorite ? Icon(Icons.bookmark , color: Colors.orange,) : SizedBox.shrink()
                   ],
                 ),
               ),
@@ -83,7 +97,11 @@ class JobCard extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(createdTime.day == DateTime.now().day? "Bugun" : "${DateTime.now().difference(createdTime).inDays} kun oldin yaratildi", style: TextStyles.h7()),
+                  Text(
+                      createdTime.day == DateTime.now().day
+                          ? "Bugun"
+                          : "${DateTime.now().difference(createdTime).inDays} kun oldin yaratildi",
+                      style: TextStyles.h7()),
                   Text("$volunteers talabgor", style: TextStyles.h7()),
                 ],
               ),
@@ -95,7 +113,10 @@ class JobCard extends StatelessWidget {
                     return Chip(
                       backgroundColor: Themes.black,
                       labelStyle: GoogleFonts.inter(color: Themes.white),
-                      label: Text(keySkills[index] , overflow: TextOverflow.visible, ),
+                      label: Text(
+                        keySkills[index],
+                        overflow: TextOverflow.visible,
+                      ),
                     );
                   },
                 ),
