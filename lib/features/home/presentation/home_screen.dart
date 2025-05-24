@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:ish_topdim/core/components/job_card_component.dart';
 import 'package:ish_topdim/core/theme/app_icons.dart';
 import 'package:ish_topdim/core/theme/app_texts.dart';
@@ -40,14 +41,19 @@ class HomeScreen extends StatelessWidget {
                   const Expanded(
                     child: CustomSearchBar(),
                   ),
-                  Container(
-                    padding: EdgeInsets.all(12),
-                    height: 50,
-                    width: 50,
-                    decoration: BoxDecoration(
-                        color: Themes.orange,
-                        borderRadius: BorderRadius.circular(10)),
-                    child: AppIcons.filter(),
+                  InkWell(
+                    onTap: (){
+                      context.go('/home/filter');
+                    },
+                    child: Container(
+                      padding: EdgeInsets.all(12),
+                      height: 50,
+                      width: 50,
+                      decoration: BoxDecoration(
+                          color: Themes.orange,
+                          borderRadius: BorderRadius.circular(10)),
+                      child: AppIcons.filter(),
+                    ),
                   ),
                 ],
               ),

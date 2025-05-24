@@ -9,7 +9,9 @@ class MainBackButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
+      borderRadius: BorderRadius.circular(20),
       child: InkWell(
+        borderRadius: BorderRadius.circular(20),
         onTap: onPressed,
         child: Container(
           margin: EdgeInsets.all(1.5.h),

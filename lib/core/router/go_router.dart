@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:ish_topdim/features/entering_profile/presentation/entering_profile_screen.dart';
 import 'package:ish_topdim/features/favorites/presentation/favorites_page.dart';
+import 'package:ish_topdim/features/home/filtering/presentation/filter_screen.dart';
 import 'package:ish_topdim/features/home/presentation/home_screen.dart';
 import 'package:ish_topdim/features/one_step/presentation/one_step_screen.dart';
 import 'package:ish_topdim/features/registration/presentation/registration_screen.dart';
@@ -18,7 +19,7 @@ final GlobalKey<NavigatorState> shellNavigatorKey = GlobalKey<NavigatorState>();
 
 final GoRouter router = GoRouter(
   navigatorKey: rootNavigatorKey,
-  initialLocation: '/home/notifications',
+  initialLocation: '/splash',
   routes: [
     GoRoute(path: '/splash', builder: (context, state) => const SplashScreen()),
     GoRoute(
@@ -76,6 +77,11 @@ final GoRouter router = GoRouter(
               path: "notifications",
               builder: (context , state)=> const NotificationsScreen(),
             ),
+            GoRoute(
+              parentNavigatorKey: rootNavigatorKey,
+              path: 'filter',
+                builder: (context, state) => const FilterScreen(),
+            )
           ],
         ),
         GoRoute(
