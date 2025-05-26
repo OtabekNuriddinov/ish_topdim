@@ -69,7 +69,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 7.h),
+                  SizedBox(height: 6.h),
                   Text(
                     "Ismingiz",
                     style: GoogleFonts.inter(
