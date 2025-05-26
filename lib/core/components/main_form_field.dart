@@ -7,12 +7,14 @@ import 'package:sizer/sizer.dart';
 class MainFormField extends StatefulWidget {
   final String hint;
   final bool? isSecret;
+  final bool? isNumber;
   final TextEditingController controller;
 
   const MainFormField({
     super.key,
     required this.hint,
     this.isSecret,
+    this.isNumber,
     required this.controller,
   });
 
@@ -40,6 +42,7 @@ class _MainFormFieldState extends State<MainFormField> {
     return SizedBox(
       height: 6.h,
       child: TextFormField(
+        keyboardType: widget.isNumber==true?TextInputType.phone : TextInputType.text,
         controller: widget.controller,
         cursorColor: Themes.orange,
         obscureText: widget.isSecret == true ? _obscureText : false,

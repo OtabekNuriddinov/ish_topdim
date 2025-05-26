@@ -86,6 +86,7 @@ class _EnteringProfileScreenState extends State<EnteringProfileScreen> {
                   MainFormField(
                       hint: "",
                     controller: phoneController,
+                    isNumber: true,
                   ),
                   SizedBox(height: 2.h),
                   Text("Parol",

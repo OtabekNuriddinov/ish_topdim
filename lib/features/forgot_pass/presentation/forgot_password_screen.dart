@@ -69,6 +69,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   ),
                   SizedBox(height: 1.h),
                   MainFormField(
+                    isNumber: true,
                     hint: "",
                     controller: phoneController,
                   ),

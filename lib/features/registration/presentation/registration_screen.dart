@@ -98,6 +98,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   SizedBox(
                     height: 7.h,
                     child: MainFormField(
+                      isNumber: true,
                       hint: "",
                       isSecret: false,
                       controller: phoneController,
