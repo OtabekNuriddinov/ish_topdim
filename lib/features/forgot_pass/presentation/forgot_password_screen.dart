@@ -37,9 +37,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
             }
         )
       ),
-      body: Center(
-        child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 2.h, horizontal: 6.w),
+      body: Padding(
+          padding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 6.w),
           child: Form(
             key: _key,
             child: SingleChildScrollView(
@@ -59,7 +58,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 4.h),
+                  SizedBox(height: 8.h),
                   Text(
                     "Telefon raqamingiz",
                     style: GoogleFonts.inter(
@@ -81,7 +80,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                         context.go("/onboarding/oneStep/entering/forgotPass/otp");
                     },
                   ),
-                  SizedBox(height: 10.h),
+                  SizedBox(height: 8.h),
                   Align(
                     alignment: Alignment.center,
                     child: MyRichText(
@@ -97,7 +96,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
             ),
           ),
         ),
-      ),
+
     );
   }
 }

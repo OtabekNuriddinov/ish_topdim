@@ -36,9 +36,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           context.pop(context);
         }),
       ),
-      body: Center(
-        child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 2.h, horizontal: 6.w),
+      body: Padding(
+          padding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 6.w),
           child: Form(
             key: _key,
             child: SingleChildScrollView(
@@ -70,7 +69,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 4.h),
+                  SizedBox(height: 7.h),
                   Text(
                     "Ismingiz",
                     style: GoogleFonts.inter(
@@ -162,7 +161,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             ),
           ),
         ),
-      ),
+
     );
   }
 }

@@ -40,9 +40,8 @@ class _EnteringProfileScreenState extends State<EnteringProfileScreen> {
             },
         ),
       ),
-      body: Center(
-        child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 2.h, horizontal: 6.w),
+      body:  Padding(
+          padding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 6.w),
           child: Form(
             key: _key,
             child: SingleChildScrollView(
@@ -74,7 +73,7 @@ class _EnteringProfileScreenState extends State<EnteringProfileScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 4.h),
+                  SizedBox(height: 7.h),
                   Text(
                     "Telefon raqamingiz",
                     style: GoogleFonts.inter(
@@ -166,7 +165,7 @@ class _EnteringProfileScreenState extends State<EnteringProfileScreen> {
             ),
           ),
         ),
-      ),
+
     );
   }
 }
