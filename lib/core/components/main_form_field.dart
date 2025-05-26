@@ -13,7 +13,7 @@ class MainFormField extends StatefulWidget {
     super.key,
     required this.hint,
     this.isSecret,
-    required this.controller
+    required this.controller,
   });
 
   @override

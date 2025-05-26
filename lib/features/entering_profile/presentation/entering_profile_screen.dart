@@ -21,8 +21,14 @@ class EnteringProfileScreen extends StatefulWidget {
 
 class _EnteringProfileScreenState extends State<EnteringProfileScreen> {
   final GlobalKey<FormState> _key = GlobalKey<FormState>();
-  final TextEditingController emailController = TextEditingController();
+  final TextEditingController phoneController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    phoneController.text = "+998";
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +75,8 @@ class _EnteringProfileScreenState extends State<EnteringProfileScreen> {
                     ),
                   ),
                   SizedBox(height: 4.h),
-                  Text("Email",
+                  Text(
+                    "Telefon raqaminiz",
                     style: GoogleFonts.inter(
                       fontWeight: FontWeight.w600,
                       fontSize: 17.sp,
@@ -77,8 +84,8 @@ class _EnteringProfileScreenState extends State<EnteringProfileScreen> {
                   ),
                   SizedBox(height: 1.h),
                   MainFormField(
-                      hint: "Elektron manzilingiz",
-                    controller: emailController,
+                      hint: "",
+                    controller: phoneController,
                   ),
                   SizedBox(height: 2.h),
                   Text("Parol",
@@ -89,7 +96,7 @@ class _EnteringProfileScreenState extends State<EnteringProfileScreen> {
                   ),
                   SizedBox(height: 1.h),
                   MainFormField(
-                      hint: "Yangi parol",
+                      hint: "Parolingiz",
                       controller: passwordController,
                     isSecret: true,
                   ),
@@ -98,7 +105,7 @@ class _EnteringProfileScreenState extends State<EnteringProfileScreen> {
                       text: TextSpan(
                         children: [
                           TextSpan(
-                            text: "Parol esdan chidimi ?",
+                            text: "Parol esdan chiqdimi ?",
                             style: GoogleFonts.inter(
                               decoration: TextDecoration.underline,
                               fontWeight: FontWeight.w600,

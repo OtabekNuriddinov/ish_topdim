@@ -44,7 +44,8 @@ final GoRouter router = GoRouter(
                   routes: [
                     GoRoute(
                         path: "otp",
-                        builder: (context, state) => const OTPScreen())
+                        builder: (context, state) => const OTPScreen(),
+                    )
                   ],
                 ),
               ],

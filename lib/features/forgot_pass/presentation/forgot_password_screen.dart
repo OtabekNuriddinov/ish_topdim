@@ -19,7 +19,13 @@ class ForgotPasswordScreen extends StatefulWidget {
 class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
 
   final GlobalKey<FormState> _key = GlobalKey<FormState>();
-  final TextEditingController emailController = TextEditingController();
+  final TextEditingController phoneController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    phoneController.text = "+998";
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -53,20 +59,9 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                       ),
                     ),
                   ),
-                  Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      "Esingizda qoladigan parol yozing!",
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.inter(
-                        fontWeight: FontWeight.w500,
-                        color: Themes.black57,
-                        fontSize: 15.sp,
-                      ),
-                    ),
-                  ),
                   SizedBox(height: 4.h),
-                  Text("Email",
+                  Text(
+                    "Telefon raqamingiz",
                     style: GoogleFonts.inter(
                       fontWeight: FontWeight.w600,
                       fontSize: 17.sp,
@@ -74,15 +69,15 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   ),
                   SizedBox(height: 1.h),
                   MainFormField(
-                    hint: "Elektron manzilingiz",
-                    controller: emailController,
+                    hint: "",
+                    controller: phoneController,
                   ),
                   SizedBox(height: 4.h),
                   MainElevatedButton(
                       text: "Kirish",
                       color: Themes.black57,
                     onPressed: (){
-                        context.push("/onboarding/oneStep/entering/forgotPass/otp");
+                        context.go("/onboarding/oneStep/entering/forgotPass/otp");
                     },
                   ),
                   SizedBox(height: 10.h),

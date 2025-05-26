@@ -49,8 +49,7 @@ class _OTPScreenState extends State<OTPScreen> {
           },
         ),
       ),
-      body: SingleChildScrollView(
-        child: Column(
+      body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -202,7 +201,7 @@ class _OTPScreenState extends State<OTPScreen> {
             )
           ],
         ),
-      ),
+
     );
   }
 

@@ -19,8 +19,14 @@ class RegistrationScreen extends StatefulWidget {
 class _RegistrationScreenState extends State<RegistrationScreen> {
   final GlobalKey<FormState> _key = GlobalKey<FormState>();
   final TextEditingController nameController = TextEditingController();
-  final TextEditingController emailController = TextEditingController();
+  final TextEditingController phoneController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    phoneController.text = "+998";
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -82,7 +88,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       )),
                   SizedBox(height: 2.h),
                   Text(
-                    "Email",
+                    "Telefon raqamingiz",
                     style: GoogleFonts.inter(
                       fontWeight: FontWeight.w600,
                       fontSize: 17.sp,
@@ -92,9 +98,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   SizedBox(
                     height: 7.h,
                     child: MainFormField(
-                      hint: "Elekron manzilingiz",
+                      hint: "",
                       isSecret: false,
-                      controller: emailController,
+                      controller: phoneController,
                     ),
                   ),
                   SizedBox(height: 2.h),
@@ -109,7 +115,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   SizedBox(
                     height: 7.h,
                     child: MainFormField(
-                      hint: "Yangi parol",
+                      hint: "Parolingiz",
                       isSecret: true,
                       controller: passwordController,
                     ),
