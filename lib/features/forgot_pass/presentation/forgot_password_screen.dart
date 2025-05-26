@@ -37,65 +37,67 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
             }
         )
       ),
-      body: Padding(
-          padding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 6.w),
-          child: Form(
-            key: _key,
-            child: SingleChildScrollView(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      "Parol esdan chiqdimi ?",
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.inter(
-                        fontWeight: FontWeight.w800,
-                        color: Themes.black57,
-                        fontSize: 21.sp,
+      body: Center(
+        child: Padding(
+            padding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 6.w),
+            child: Form(
+              key: _key,
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Align(
+                      alignment: Alignment.center,
+                      child: Text(
+                        "Parol esdan chiqdimi ?",
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.inter(
+                          fontWeight: FontWeight.w800,
+                          color: Themes.black57,
+                          fontSize: 21.sp,
+                        ),
                       ),
                     ),
-                  ),
-                  SizedBox(height: 8.h),
-                  Text(
-                    "Telefon raqamingiz",
-                    style: GoogleFonts.inter(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 17.sp,
+                    SizedBox(height: 8.h),
+                    Text(
+                      "Telefon raqamingiz",
+                      style: GoogleFonts.inter(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 17.sp,
+                      ),
                     ),
-                  ),
-                  SizedBox(height: 1.h),
-                  MainFormField(
-                    isNumber: true,
-                    hint: "",
-                    controller: phoneController,
-                  ),
-                  SizedBox(height: 4.h),
-                  MainElevatedButton(
-                      text: "Kirish",
-                      color: Themes.black57,
-                    onPressed: (){
-                        context.go("/onboarding/oneStep/entering/forgotPass/otp");
-                    },
-                  ),
-                  SizedBox(height: 8.h),
-                  Align(
-                    alignment: Alignment.center,
-                    child: MyRichText(
-                        firstText: "Orqaga qaytish ",
-                        secondText: "ORQAGA",
-                        onPressed: (){
-                          context.pop(context);
-                        }
+                    SizedBox(height: 1.h),
+                    MainFormField(
+                      isNumber: true,
+                      hint: "",
+                      controller: phoneController,
                     ),
-                  )
-                ],
+                    SizedBox(height: 4.h),
+                    MainElevatedButton(
+                        text: "Kirish",
+                        color: Themes.black57,
+                      onPressed: (){
+                          context.go("/onboarding/oneStep/entering/forgotPass/otp");
+                      },
+                    ),
+                    SizedBox(height: 8.h),
+                    Align(
+                      alignment: Alignment.center,
+                      child: MyRichText(
+                          firstText: "Orqaga qaytish ",
+                          secondText: "ORQAGA",
+                          onPressed: (){
+                            context.pop(context);
+                          }
+                      ),
+                    )
+                  ],
+                ),
               ),
             ),
           ),
-        ),
+      ),
 
     );
   }
