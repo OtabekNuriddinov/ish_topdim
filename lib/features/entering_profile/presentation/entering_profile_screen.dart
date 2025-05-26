@@ -76,7 +76,7 @@ class _EnteringProfileScreenState extends State<EnteringProfileScreen> {
                   ),
                   SizedBox(height: 4.h),
                   Text(
-                    "Telefon raqaminiz",
+                    "Telefon raqamingiz",
                     style: GoogleFonts.inter(
                       fontWeight: FontWeight.w600,
                       fontSize: 17.sp,
