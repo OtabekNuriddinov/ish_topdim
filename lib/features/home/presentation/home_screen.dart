@@ -7,7 +7,6 @@ import 'package:ish_topdim/core/theme/text_styles.dart';
 import 'package:ish_topdim/core/theme/themes.dart';
 import 'package:ish_topdim/features/home/components/appbar.dart';
 import 'package:ish_topdim/features/home/components/search_bar.dart';
-import '../../../core/components/bottom_appbar.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

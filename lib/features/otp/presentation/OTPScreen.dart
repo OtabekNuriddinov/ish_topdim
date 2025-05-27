@@ -11,23 +11,6 @@ import '../components/build_number_button.dart';
 import '../components/new_number.dart';
 import '../components/zero_back_button.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Sizer(builder: (context, orientation, type) {
-      return MaterialApp(
-        home: OTPScreen(),
-      );
-    });
-  }
-}
-
 class OTPScreen extends StatefulWidget {
   const OTPScreen({super.key});
 

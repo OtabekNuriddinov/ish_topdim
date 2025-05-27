@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ish_topdim/features/home/filtering/steps/category/provider/category_provider.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../../core/theme/themes.dart';
