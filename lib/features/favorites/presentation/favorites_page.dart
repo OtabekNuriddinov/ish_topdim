@@ -12,9 +12,7 @@ class FavoritesPage extends StatelessWidget {
     return DefaultTabController(
       length: 1,
       child: Scaffold(
-        backgroundColor: Themes.white,
         appBar: AppBar(
-          backgroundColor: Themes.white,
           title: Text(
             "Saqlanganlar",
             style: TextStyles.h1(),

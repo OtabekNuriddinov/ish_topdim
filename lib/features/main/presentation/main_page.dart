@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:ish_topdim/core/components/bottom_appbar.dart';
 
-import '../../home/presentation/home_screen.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({super.key, required this.child, required this.currentIndex});
@@ -23,6 +22,7 @@ class MainPage extends StatelessWidget {
               0 => "/home",
               1 => "/favorite",
               2 => "/add",
+              4 => "/profile",
               _ => "/home",
             };
             context.go(page);

@@ -46,7 +46,7 @@ class NotificationCompanyWidget extends StatelessWidget {
             detail,
             style: TextStyles.h6(color: Themes.greyText),
           ),
-          Text(time ,style: TextStyles.h7(color: Themes.orange),)
+          Text(time ,style: TextStyles.h9(color: Themes.orange),)
         ],
       ),
     );

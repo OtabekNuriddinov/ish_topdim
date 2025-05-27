@@ -13,6 +13,7 @@ import '../../features/home/notifications/presentation/notifications_screen.dart
 import '../../features/main/presentation/main_page.dart';
 import '../../features/onboarding/presentation/onboarding_screen.dart';
 import '../../features/otp/presentation/OTPScreen.dart';
+import '../../features/profile/presentation/profile_page.dart';
 import '../../features/splash/presentation/splash_screen.dart';
 
 final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>();
@@ -65,6 +66,7 @@ final GoRouter router = GoRouter(
             final p when p.startsWith("/home") => 0,
             final p when p.startsWith("/favorite") => 1,
             final p when p.startsWith("/add") => 2,
+            final p when p.startsWith("/profile") => 4,
             _ => 0,
           },
           child: child,
@@ -84,7 +86,7 @@ final GoRouter router = GoRouter(
               parentNavigatorKey: rootNavigatorKey,
               path: 'filter',
                 builder: (context, state) => const FilterScreen(),
-            )
+            ),
           ],
         ),
         GoRoute(
@@ -94,6 +96,10 @@ final GoRouter router = GoRouter(
         GoRoute(
             path: "/add",
             builder: (context, state) => const PlaceAnAdScreen()
+        ),
+        GoRoute(
+          path: '/profile',
+          builder: (context, state) => const ProfileScreen(),
         )
       ],
     ),

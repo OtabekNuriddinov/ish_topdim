@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CustomBottomAppBar extends StatefulWidget {
@@ -28,7 +29,7 @@ class _CustomBottomAppBarState extends State<CustomBottomAppBar> {
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
-      height: 90,
+      height: 85,
       color: Colors.transparent,
       child: Card(
         elevation: 10,
@@ -39,7 +40,7 @@ class _CustomBottomAppBarState extends State<CustomBottomAppBar> {
             image: DecorationImage(
               alignment: Alignment.centerRight,
               image: AssetImage(
-                "assets/images/search.png",
+                _selectedIndex == 4 ? "assets/images/search_blue.png":"assets/images/search.png" ,
               ),
             ),
           ),
@@ -51,16 +52,16 @@ class _CustomBottomAppBarState extends State<CustomBottomAppBar> {
                 IconData icon;
                 switch (index) {
                   case 0:
-                    icon = Icons.home;
+                    icon = CupertinoIcons.house_fill;
                     break;
                   case 1:
-                    icon = Icons.bookmark;
+                    icon = CupertinoIcons.bookmark_solid;
                     break;
                   case 2:
-                    icon = Icons.add;
+                    icon = CupertinoIcons.add;
                     break;
                   case 3:
-                    icon = Icons.message;
+                    icon = Icons.sms_rounded;
                     break;
                   case 4:
                     icon = Icons.person;
