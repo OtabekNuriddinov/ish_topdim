@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ish_topdim/core/components/main_back_button.dart';
+import 'package:ish_topdim/core/theme/app_texts.dart';
 import 'package:sizer/sizer.dart';
 import '../../../core/components/main_elevated_button.dart';
 import '../../../core/components/main_form_field.dart';
@@ -31,7 +32,11 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: false,
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        surfaceTintColor: Colors.transparent,
+        elevation: 0,
         leading: MainBackButton(onPressed: () {
           context.pop(context);
         }),
@@ -48,7 +53,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   Align(
                     alignment: Alignment.center,
                     child: Text(
-                      "Ro'yxatdan o'tish",
+                      AppTexts.register,
                       textAlign: TextAlign.center,
                       style: GoogleFonts.inter(
                         fontWeight: FontWeight.w800,
@@ -60,7 +65,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   Align(
                     alignment: Alignment.center,
                     child: Text(
-                      "platformadan foydalanish\nuchun ro'yxatdan o'ting",
+                      AppTexts.haveToRegister,
                       textAlign: TextAlign.center,
                       style: GoogleFonts.inter(
                         fontWeight: FontWeight.w500,
@@ -71,7 +76,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   ),
                   SizedBox(height: 6.h),
                   Text(
-                    "Ismingiz",
+                    AppTexts.name,
                     style: GoogleFonts.inter(
                       fontWeight: FontWeight.w600,
                       fontSize: 17.sp,
@@ -81,13 +86,13 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   SizedBox(
                       height: 7.h,
                       child: MainFormField(
-                        hint: "To'liq ismingizni kiriting",
+                        hint: AppTexts.fullName,
                         isSecret: false,
                         controller: nameController,
                       )),
                   SizedBox(height: 2.h),
                   Text(
-                    "Telefon raqamingiz",
+                    AppTexts.phone,
                     style: GoogleFonts.inter(
                       fontWeight: FontWeight.w600,
                       fontSize: 17.sp,
@@ -105,7 +110,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   ),
                   SizedBox(height: 2.h),
                   Text(
-                    "Parol",
+                    AppTexts.password,
                     style: GoogleFonts.inter(
                       fontWeight: FontWeight.w600,
                       fontSize: 17.sp,
@@ -115,7 +120,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   SizedBox(
                     height: 7.h,
                     child: MainFormField(
-                      hint: "Parolingiz",
+                      hint: AppTexts.enterPass,
                       isSecret: true,
                       controller: passwordController,
                     ),
@@ -123,12 +128,12 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   SizedBox(height: 5.h),
                   MainElevatedButton(
                     color: Themes.black57,
-                    text: "ro'yxatdan o'tish",
+                    text: AppTexts.register,
                     onPressed: () {
                       context.go("/home");
                     },
                   ),
-                  SizedBox(height: 8.h),
+                  SizedBox(height: 7.h),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -151,9 +156,11 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   Align(
                     alignment: Alignment.center,
                     child: MyRichText(
-                      firstText: "sizda profil mavjudmi ? ",
-                      secondText: "KIRISH",
-                      onPressed: () {},
+                      firstText: AppTexts.dUHaveProfile,
+                      secondText: AppTexts.enter,
+                      onPressed: () {
+                        context.go('/onboarding/oneStep/entering');
+                      },
                     ),
                   )
                 ],

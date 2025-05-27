@@ -12,7 +12,7 @@ import '../../../core/components/bottom_appbar.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
-  static const List<String> ishlar = [
+  static const List< String> ishlar = [
     "To'liq stafka",
     "Online",
     "Middle",
@@ -98,7 +98,7 @@ class HomeScreen extends StatelessWidget {
                   shrinkWrap: true,
                   children: [
                     JobCard(
-                      agency: "Kiym sexi uchun",
+                      agency: "Kiyim sexi uchun",
                       town: "Toshkent shahri",
                       job: "SMM Manager",
                       keySkills: ishlar,

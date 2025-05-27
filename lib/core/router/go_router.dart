@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:ish_topdim/features/adding/presentation/adding_screen.dart';
 import 'package:ish_topdim/features/entering_profile/presentation/entering_profile_screen.dart';
 import 'package:ish_topdim/features/favorites/presentation/favorites_page.dart';
 import 'package:ish_topdim/features/home/filtering/presentation/filter_screen.dart';
@@ -63,6 +64,7 @@ final GoRouter router = GoRouter(
           currentIndex: switch (state.uri.path) {
             final p when p.startsWith("/home") => 0,
             final p when p.startsWith("/favorite") => 1,
+            final p when p.startsWith("/add") => 2,
             _ => 0,
           },
           child: child,
@@ -89,6 +91,10 @@ final GoRouter router = GoRouter(
           path: '/favorite',
           builder: (context, state) => const FavoritesPage(),
         ),
+        GoRoute(
+            path: "/add",
+            builder: (context, state) => const PlaceAnAdScreen()
+        )
       ],
     ),
   ],

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class CategoryProvider extends ChangeNotifier{
   final Map<String, bool> _categories = {
     "Kiyim kechak": false,
-    "Mebel sex": false,
+    "Mebel fabrikasi": false,
     "It sohasi": false,
   };
   Map<String, bool> get categories => _categories;

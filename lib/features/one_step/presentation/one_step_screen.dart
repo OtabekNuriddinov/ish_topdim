@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ish_topdim/core/components/main_back_button.dart';
+import 'package:ish_topdim/core/theme/app_texts.dart';
 import 'package:sizer/sizer.dart';
 class Another1Step extends StatelessWidget {
   const Another1Step({super.key});
@@ -24,7 +25,7 @@ class Another1Step extends StatelessWidget {
                 Expanded(
                   flex: 5,
                   child: Text(
-                    "ISH IZLASHGA\n1 QADAM QOLDI",
+                    AppTexts.oneStep,
                     textAlign: TextAlign.center,
                     style: GoogleFonts.inter(
                         fontWeight: FontWeight.w800,
@@ -45,7 +46,7 @@ class Another1Step extends StatelessWidget {
                     ),
                   ),
                   child: Text(
-                    "ro'yxatdan o'tish", style: TextStyle(fontSize: 17.sp, color: Colors.white),
+                    AppTexts.register, style: TextStyle(fontSize: 17.sp, color: Colors.white),
                   ),
                 ),
                 SizedBox(height: 2.h),
@@ -61,7 +62,7 @@ class Another1Step extends StatelessWidget {
                     ),
                   ),
                   child: Text(
-                    "akauntga kirish", style: TextStyle(fontSize: 17.sp, color: Colors.black),
+                    AppTexts.toAccount, style: TextStyle(fontSize: 17.sp, color: Colors.black),
                   ),
                 ),
                 SizedBox(height: 2.h),

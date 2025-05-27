@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:ish_topdim/core/components/main_back_button.dart';
 import 'package:ish_topdim/core/components/main_elevated_button.dart';
 import 'package:ish_topdim/core/components/my_rich_text.dart';
+import 'package:ish_topdim/core/theme/app_texts.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../core/components/main_form_field.dart';
@@ -50,7 +51,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     Align(
                       alignment: Alignment.center,
                       child: Text(
-                        "Parol esdan chiqdimi ?",
+                        AppTexts.forgotPass,
                         textAlign: TextAlign.center,
                         style: GoogleFonts.inter(
                           fontWeight: FontWeight.w800,
@@ -61,7 +62,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     ),
                     SizedBox(height: 8.h),
                     Text(
-                      "Telefon raqamingiz",
+                      AppTexts.phone,
                       style: GoogleFonts.inter(
                         fontWeight: FontWeight.w600,
                         fontSize: 17.sp,
@@ -75,18 +76,18 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     ),
                     SizedBox(height: 4.h),
                     MainElevatedButton(
-                        text: "Kirish",
+                        text: AppTexts.enter,
                         color: Themes.black57,
                       onPressed: (){
                           context.go("/onboarding/oneStep/entering/forgotPass/otp");
                       },
                     ),
-                    SizedBox(height: 8.h),
+                    SizedBox(height: 7.h),
                     Align(
                       alignment: Alignment.center,
                       child: MyRichText(
-                          firstText: "Orqaga qaytish ",
-                          secondText: "ORQAGA",
+                          firstText: AppTexts.toOldPage,
+                          secondText: AppTexts.goBack,
                           onPressed: (){
                             context.pop(context);
                           }

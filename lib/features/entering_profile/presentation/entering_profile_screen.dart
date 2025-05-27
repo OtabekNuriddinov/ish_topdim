@@ -6,6 +6,7 @@ import 'package:ish_topdim/core/components/main_back_button.dart';
 import 'package:ish_topdim/core/components/main_elevated_button.dart';
 import 'package:ish_topdim/core/components/main_form_field.dart';
 import 'package:ish_topdim/core/components/my_rich_text.dart';
+import 'package:ish_topdim/core/theme/app_texts.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../core/components/social_media_icons.dart';
@@ -52,7 +53,7 @@ class _EnteringProfileScreenState extends State<EnteringProfileScreen> {
                   Align(
                     alignment: Alignment.center,
                     child: Text(
-                      "Profilga kirish",
+                      AppTexts.toAccount,
                       textAlign: TextAlign.center,
                       style: GoogleFonts.inter(
                         fontWeight: FontWeight.w800,
@@ -64,7 +65,7 @@ class _EnteringProfileScreenState extends State<EnteringProfileScreen> {
                   Align(
                     alignment: Alignment.center,
                     child: Text(
-                        "platformadan foydalanish\nuchun Profilingizga kiring",
+                        AppTexts.haveToEnter,
                       textAlign: TextAlign.center,
                       style: GoogleFonts.inter(
                         fontWeight: FontWeight.w500,
@@ -75,7 +76,7 @@ class _EnteringProfileScreenState extends State<EnteringProfileScreen> {
                   ),
                   SizedBox(height: 6.h),
                   Text(
-                    "Telefon raqamingiz",
+                    AppTexts.phone,
                     style: GoogleFonts.inter(
                       fontWeight: FontWeight.w600,
                       fontSize: 17.sp,
@@ -88,7 +89,7 @@ class _EnteringProfileScreenState extends State<EnteringProfileScreen> {
                     isNumber: true,
                   ),
                   SizedBox(height: 2.h),
-                  Text("Parol",
+                  Text(AppTexts.password,
                     style: GoogleFonts.inter(
                       fontWeight: FontWeight.w600,
                       fontSize: 17.sp,
@@ -96,7 +97,7 @@ class _EnteringProfileScreenState extends State<EnteringProfileScreen> {
                   ),
                   SizedBox(height: 1.h),
                   MainFormField(
-                      hint: "Parolingiz",
+                      hint: AppTexts.enterPass,
                       controller: passwordController,
                     isSecret: true,
                   ),
@@ -105,7 +106,7 @@ class _EnteringProfileScreenState extends State<EnteringProfileScreen> {
                       text: TextSpan(
                         children: [
                           TextSpan(
-                            text: "Parol esdan chiqdimi ?",
+                            text: AppTexts.forgotPass,
                             style: GoogleFonts.inter(
                               decoration: TextDecoration.underline,
                               fontWeight: FontWeight.w600,
@@ -122,7 +123,7 @@ class _EnteringProfileScreenState extends State<EnteringProfileScreen> {
                   ),
                   SizedBox(height: 4.h),
                   MainElevatedButton(
-                      text: "Kirish",
+                      text: AppTexts.enter,
                       color: Themes.black57,
                     onPressed: (){
                         context.go("/home");
@@ -154,9 +155,9 @@ class _EnteringProfileScreenState extends State<EnteringProfileScreen> {
                     alignment: Alignment.center,
                     child: MyRichText(
                         firstText: "sizda profil mavjud emasmi ? ",
-                        secondText: "QAYTISH",
+                        secondText: AppTexts.goBack,
                         onPressed: (){
-                          context.pop(context);
+                          context.go('/onboarding/oneStep/registration');
                         }
                     ),
                   )

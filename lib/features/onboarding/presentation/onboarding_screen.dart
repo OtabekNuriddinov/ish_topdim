@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ish_topdim/core/theme/app_texts.dart';
 import 'package:ish_topdim/core/theme/themes.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../../core/components/secondary_elevated_button.dart';
-import '../components/onboard_back_button.dart';
-
 
 class OnBoarding extends StatefulWidget {
   const OnBoarding({super.key});
@@ -22,17 +21,17 @@ class _OnBoardingState extends State<OnBoarding> {
   List<Widget> list = [
     Text(
       textAlign: TextAlign.center,
-      "O'BEKISTONDAGI\nBIRINCHI ISH TOPISH\nPLATFORMASI",
+      AppTexts.uzbFirst,
       style: GoogleFonts.inter(fontWeight: FontWeight.w800, fontSize: 22.sp),
     ),
     Text(
       textAlign: TextAlign.center,
-      "SIZGA QULAY BO'LGAN\nOYLIKDAGI ISHLAR",
-      style: GoogleFonts.inter(fontWeight: FontWeight.w800, fontSize: 22.sp),
+      AppTexts.comfortForYou,
+      style: GoogleFonts.inter(fontWeight: FontWeight.w800, fontSize: 21.sp),
     ),
     Text(
       textAlign: TextAlign.center,
-      "ENDI ISHCHI TOPISH\nOSSON",
+      AppTexts.easy,
       style: GoogleFonts.inter(fontWeight: FontWeight.w800, fontSize: 22.sp),
     ),
   ];
@@ -40,10 +39,6 @@ class _OnBoardingState extends State<OnBoarding> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading:
-            _currentIndex >= 1
-                ? OnBoardBackButton(controller: _controller)
-                : SizedBox.shrink(),
         actions: [
           _currentIndex == 0
               ? TextButton(
@@ -61,7 +56,7 @@ class _OnBoardingState extends State<OnBoarding> {
                     }
                   });
                 },
-                child: Text("Keyingisi"),
+                child: Text(AppTexts.next),
               )
               : SizedBox.shrink(),
         ],
@@ -83,7 +78,7 @@ class _OnBoardingState extends State<OnBoarding> {
                 itemCount: list.length,
                 itemBuilder:
                     (_, index) => Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 3.w),
+                      padding: EdgeInsets.symmetric(horizontal: 4.w),
                       child: list[index],
                     ),
               ),
@@ -107,7 +102,7 @@ class _OnBoardingState extends State<OnBoarding> {
             ),
             SizedBox(height: 4.h),
             SecondaryElevatedButton(
-                text: "keyingisi",
+                text: AppTexts.next,
                 color: Themes.black57,
                 onPressed: (){
                   if (_currentIndex < list.length - 1) {

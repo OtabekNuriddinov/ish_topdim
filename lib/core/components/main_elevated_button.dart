@@ -25,7 +25,7 @@ class MainElevatedButton extends StatelessWidget {
         ),
         onPressed: onPressed,
         child: Text(text, style: GoogleFonts.inter(
-            fontWeight: FontWeight.w500,
+            fontWeight: FontWeight.w700,
             fontSize: 16.sp,
             color: Colors.white
         ),)

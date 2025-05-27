@@ -54,6 +54,7 @@ class JobCard extends StatelessWidget {
                     PpImageCard(imageUrl: companyImageUrl),
                     Column(
                       mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(agency, style: TextStyles.h4()),
                         Text(

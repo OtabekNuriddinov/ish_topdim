@@ -22,6 +22,7 @@ class MainPage extends StatelessWidget {
             String page = switch (index) {
               0 => "/home",
               1 => "/favorite",
+              2 => "/add",
               _ => "/home",
             };
             context.go(page);

@@ -68,7 +68,7 @@ class _OTPScreenState extends State<OTPScreen> {
             Align(
               alignment: Alignment.center,
               child: Text(
-                "telefoningizga kelgan\nsms kodni kiriting",
+                "Telefoningizga kelgan\nsms kodni kiriting",
                 textAlign: TextAlign.center,
                 style: GoogleFonts.inter(
                   fontWeight: FontWeight.w500,

@@ -8,6 +8,8 @@ AppBar homeAppBar({required BuildContext context}){
   return AppBar(
     leadingWidth: 100,
     toolbarHeight: 60,
+    backgroundColor: Colors.transparent,
+    surfaceTintColor: Colors.transparent,
     leading: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
