@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:ish_topdim/core/components/main_elevated_button.dart';
 import 'package:ish_topdim/core/theme/themes.dart';
 import 'package:ish_topdim/features/profile/components/background_container.dart';
@@ -40,7 +41,12 @@ class ProfileScreen extends StatelessWidget {
               BackgroundContainer(child: Text("Sizning hamyonlaringiz", style: TextStyles.h6())),
               BackgroundContainer(child: Text("To'lovlar tarixi", style: TextStyles.h6())),
               Text("Sozlamalar va boshqalar", style: TextStyles.h4()),
-              BackgroundContainer(child: Text("Sozlamalar", style: TextStyles.h6())),
+              BackgroundContainer(
+                child: Text("Sozlamalar", style: TextStyles.h6()),
+                onPressed: (){
+                  context.go('/profile/settings');
+                },
+              ),
               BackgroundContainer(child: Text("Yordam", style: TextStyles.h6())),
               BackgroundContainer(backgroundColor: Themes.orange,child: Text("Chiqish", style: TextStyles.h6(color: Colors.white)),),
             ],

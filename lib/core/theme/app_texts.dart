@@ -21,4 +21,6 @@ sealed class AppTexts{
   static const goBack = "QAYTISH";
   static const goBackFull = "Orqaga qaytish ";
   static const toOldPage = "Oldingi sahifaga ";
+
+  static const load = "SAQLASH";
 }
