@@ -15,6 +15,7 @@ sealed class AppDialog {
     required void Function() pressRight,
   }) {
     return showDialog(
+
         context: context,
         builder: (context) {
           return AlertDialog(
