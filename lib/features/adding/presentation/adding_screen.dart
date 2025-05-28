@@ -61,10 +61,7 @@ class _PlaceAnAdScreenState extends State<PlaceAnAdScreen> {
                     style: GoogleFonts.inter(
                         fontSize: 16.sp, fontWeight: FontWeight.w500)),
                 SizedBox(height: 1.h),
-                ForLocationNPic(
-                  text: "Surat qo'shing",
-                  onPressed: () {},
-                ),
+                ForLocationNPic(text: "Surat qo'shing", onPressed: () {}),
                 SizedBox(height: 1.h),
                 Text(
                   "Sarlavha qo'shing",
@@ -74,10 +71,7 @@ class _PlaceAnAdScreenState extends State<PlaceAnAdScreen> {
                   ),
                 ),
                 SizedBox(height: 1.h),
-                MainFormField(
-                  hint: "Masalan, Samsung qurilmalari",
-                  controller: titleController,
-                ),
+                MainFormField(hint: "Masalan, Samsung qurilmalari", controller: titleController),
                 Text(
                   "Kamida 16 ta belgi kiriting",
                   style: GoogleFonts.inter(
@@ -132,10 +126,7 @@ class _PlaceAnAdScreenState extends State<PlaceAnAdScreen> {
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                MainFormField(
-                  hint: "",
-                  controller: forContactController,
-                ),
+                MainFormField(hint: "", controller: forContactController),
                 SizedBox(height: 1.h),
                 Text(
                   AppTexts.phone,
@@ -144,11 +135,7 @@ class _PlaceAnAdScreenState extends State<PlaceAnAdScreen> {
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                MainFormField(
-                  isNumber: true,
-                  hint: "",
-                  controller: phoneController,
-                ),
+                MainFormField(isNumber: true, hint: "", controller: phoneController),
                 SizedBox(height: 1.h),
                 Text(
                   "Joylashuv",
@@ -169,12 +156,7 @@ class _PlaceAnAdScreenState extends State<PlaceAnAdScreen> {
                 SizedBox(height: 1.h),
                 ForLocationNPic(text: "Joylashuvni kiriting", onPressed: () {}),
                 SizedBox(height: 2.h),
-                MainElevatedButton(
-                    text: "E'LONNI JOYLASHTIRISH",
-                    color: Themes.orange,
-                    onPressed: () {
-
-                    },
+                MainElevatedButton(text: "E'LONNI JOYLASHTIRISH", color: Themes.orange, onPressed: () {},
                 )
               ],
             ),

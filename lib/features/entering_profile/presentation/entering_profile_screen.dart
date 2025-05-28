@@ -83,11 +83,7 @@ class _EnteringProfileScreenState extends State<EnteringProfileScreen> {
                     ),
                   ),
                   SizedBox(height: 1.h),
-                  MainFormField(
-                      hint: "",
-                    controller: phoneController,
-                    isNumber: true,
-                  ),
+                  MainFormField(hint: "", controller: phoneController, isNumber: true),
                   SizedBox(height: 2.h),
                   Text(AppTexts.password,
                     style: GoogleFonts.inter(
@@ -96,10 +92,7 @@ class _EnteringProfileScreenState extends State<EnteringProfileScreen> {
                     ),
                   ),
                   SizedBox(height: 1.h),
-                  MainFormField(
-                      hint: AppTexts.enterPass,
-                      controller: passwordController,
-                    isSecret: true,
+                  MainFormField(hint: AppTexts.enterPass, controller: passwordController, isSecret: true
                   ),
                   SizedBox(height: 0.7.h),
                   RichText(
@@ -122,10 +115,7 @@ class _EnteringProfileScreenState extends State<EnteringProfileScreen> {
                       )
                   ),
                   SizedBox(height: 4.h),
-                  MainElevatedButton(
-                      text: AppTexts.enter,
-                      color: Themes.black57,
-                    onPressed: (){
+                  MainElevatedButton(text: AppTexts.enter, color: Themes.black57, onPressed: (){
                         context.go("/home");
                     },
                   ),
@@ -133,21 +123,12 @@ class _EnteringProfileScreenState extends State<EnteringProfileScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      SocialIcons(
-                        iconPath: "assets/icons/google_icon.svg",
-                        onPressed: (){
-                        },
+                      SocialIcons(iconPath: "assets/icons/google_icon.svg", onPressed: (){},
                       ),
                       SizedBox(width: 4.w),
-                      SocialIcons(
-                        iconPath: "assets/icons/apple_icon.svg",
-                        onPressed: (){},
-                      ),
+                      SocialIcons(iconPath: "assets/icons/apple_icon.svg", onPressed: (){},),
                       SizedBox(width: 4.w),
-                      SocialIcons(
-                          iconPath: "assets/icons/facebook_icon.svg",
-                          onPressed: (){}
-                      ),
+                      SocialIcons(iconPath: "assets/icons/facebook_icon.svg", onPressed: (){}),
                     ],
                   ),
                   SizedBox(height: 1.7.h),

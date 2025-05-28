@@ -85,11 +85,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   SizedBox(height: 1.h),
                   SizedBox(
                       height: 7.h,
-                      child: MainFormField(
-                        hint: AppTexts.fullName,
-                        isSecret: false,
-                        controller: nameController,
-                      )),
+                      child: MainFormField(hint: AppTexts.fullName, isSecret: false, controller: nameController)
+                  ),
                   SizedBox(height: 2.h),
                   Text(
                     AppTexts.phone,
@@ -101,12 +98,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   SizedBox(height: 1.h),
                   SizedBox(
                     height: 7.h,
-                    child: MainFormField(
-                      isNumber: true,
-                      hint: "",
-                      isSecret: false,
-                      controller: phoneController,
-                    ),
+                    child: MainFormField(isNumber: true, hint: "", isSecret: false, controller: phoneController),
                   ),
                   SizedBox(height: 2.h),
                   Text(
@@ -119,17 +111,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   SizedBox(height: 1.h),
                   SizedBox(
                     height: 7.h,
-                    child: MainFormField(
-                      hint: AppTexts.enterPass,
-                      isSecret: true,
-                      controller: passwordController,
-                    ),
+                    child: MainFormField(hint: AppTexts.enterPass, isSecret: true, controller: passwordController),
                   ),
                   SizedBox(height: 5.h),
-                  MainElevatedButton(
-                    color: Themes.black57,
-                    text: AppTexts.register,
-                    onPressed: () {
+                  MainElevatedButton(color: Themes.black57, text: AppTexts.register, onPressed: () {
                       context.go("/home");
                     },
                   ),
@@ -137,19 +122,11 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      SocialIcons(
-                        iconPath: "assets/icons/google_icon.svg",
-                        onPressed: () {},
-                      ),
+                      SocialIcons(iconPath: "assets/icons/google_icon.svg", onPressed: () {}),
                       SizedBox(width: 4.w),
-                      SocialIcons(
-                        iconPath: "assets/icons/apple_icon.svg",
-                        onPressed: () {},
-                      ),
+                      SocialIcons(iconPath: "assets/icons/apple_icon.svg", onPressed: () {}),
                       SizedBox(width: 4.w),
-                      SocialIcons(
-                          iconPath: "assets/icons/facebook_icon.svg",
-                          onPressed: () {}),
+                      SocialIcons(iconPath: "assets/icons/facebook_icon.svg", onPressed: () {}),
                     ],
                   ),
                   SizedBox(height: 1.7.h),

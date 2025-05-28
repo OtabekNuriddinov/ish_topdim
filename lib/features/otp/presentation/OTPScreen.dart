@@ -114,54 +114,27 @@ class _OTPScreenState extends State<OTPScreen> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            BuildNumberButton(
-                              number: "1",
-                              onTap: (value) => _onNumberPressed("1"),
-                            ),
-                            BuildNumberButton(
-                              number: "2",
-                              onTap: (value) => _onNumberPressed("2"),
-                            ),
-                            BuildNumberButton(
-                              number: "3",
-                              onTap: (value) => _onNumberPressed("3"),
-                            ),
+                            BuildNumberButton(number: "1", onTap: (value) => _onNumberPressed("1")),
+                            BuildNumberButton(number: "2", onTap: (value) => _onNumberPressed("2")),
+                            BuildNumberButton(number: "3", onTap: (value) => _onNumberPressed("3")),
                           ],
                         ),
                         SizedBox(height: 1.h),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            BuildNumberButton(
-                              number: "4",
-                              onTap: (value) => _onNumberPressed("4"),
-                            ),
-                            BuildNumberButton(
-                              number: "5",
-                              onTap: (value) => _onNumberPressed("5"),
-                            ),
-                            BuildNumberButton(
-                              number: "6",
-                              onTap: (value) => _onNumberPressed("6"),
-                            ),
+                            BuildNumberButton(number: "4", onTap: (value) => _onNumberPressed("4")),
+                            BuildNumberButton(number: "5", onTap: (value) => _onNumberPressed("5")),
+                            BuildNumberButton(number: "6", onTap: (value) => _onNumberPressed("6")),
                           ],
                         ),
                         SizedBox(height: 1.5.h),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            BuildNumberButton(
-                              number: "7",
-                              onTap: (value) => _onNumberPressed("7"),
-                            ),
-                            BuildNumberButton(
-                              number: "8",
-                              onTap: (value) => _onNumberPressed("8"),
-                            ),
-                            BuildNumberButton(
-                              number: "9",
-                              onTap: (value) => _onNumberPressed("9"),
-                            ),
+                            BuildNumberButton(number: "7", onTap: (value) => _onNumberPressed("7")),
+                            BuildNumberButton(number: "8", onTap: (value) => _onNumberPressed("8")),
+                            BuildNumberButton(number: "9", onTap: (value) => _onNumberPressed("9")),
                           ],
                         ),
                         SizedBox(height: 1.5.h),
