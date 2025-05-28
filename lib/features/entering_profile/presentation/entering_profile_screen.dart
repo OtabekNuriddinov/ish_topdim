@@ -1,17 +1,4 @@
-import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:ish_topdim/core/components/main_back_button.dart';
-import 'package:ish_topdim/core/components/main_elevated_button.dart';
-import 'package:ish_topdim/core/components/main_form_field.dart';
-import 'package:ish_topdim/core/components/my_rich_text.dart';
-import 'package:ish_topdim/core/theme/app_texts.dart';
-import 'package:sizer/sizer.dart';
-
-import '../../../core/components/social_media_icons.dart';
-import '../../../core/theme/themes.dart';
-
+import '../libs/entering_libs.dart';
 
 class EnteringProfileScreen extends StatefulWidget {
   const EnteringProfileScreen({super.key});

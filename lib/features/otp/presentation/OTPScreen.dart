@@ -1,15 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:ish_topdim/core/components/main_back_button.dart';
-import 'package:ish_topdim/core/components/main_elevated_button.dart';
-import 'package:ish_topdim/features/otp/components/otp_rich_text.dart';
-import 'package:sizer/sizer.dart';
-
-import '../../../core/theme/themes.dart';
-import '../components/build_number_button.dart';
-import '../components/new_number.dart';
-import '../components/zero_back_button.dart';
+import '../libs/otp_libs.dart';
 
 class OTPScreen extends StatefulWidget {
   const OTPScreen({super.key});

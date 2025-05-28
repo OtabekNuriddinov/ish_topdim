@@ -1,11 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:ish_topdim/core/theme/app_texts.dart';
-import 'package:ish_topdim/core/theme/themes.dart';
-import 'package:sizer/sizer.dart';
-
-import '../../../../core/components/secondary_elevated_button.dart';
+import '../libs/onboarding_libs.dart';
 
 class OnBoarding extends StatefulWidget {
   const OnBoarding({super.key});

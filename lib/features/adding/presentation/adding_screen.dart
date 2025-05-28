@@ -1,16 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:ish_topdim/core/components/main_elevated_button.dart';
-import 'package:ish_topdim/core/components/main_form_field.dart';
-import 'package:ish_topdim/core/theme/app_texts.dart';
-import 'package:ish_topdim/features/adding/components/chooseExpansionTile.dart';
-import 'package:sizer/sizer.dart';
-
-import '../../../core/theme/text_styles.dart';
-import '../../../core/theme/themes.dart';
-import '../components/big_text_field.dart';
-import '../components/location_n_pic.dart';
-
+import '../libs/adding_libs.dart';
 
 class PlaceAnAdScreen extends StatefulWidget {
   const PlaceAnAdScreen({super.key});
@@ -71,7 +59,9 @@ class _PlaceAnAdScreenState extends State<PlaceAnAdScreen> {
                   ),
                 ),
                 SizedBox(height: 1.h),
-                MainFormField(hint: "Masalan, Samsung qurilmalari", controller: titleController),
+                MainFormField(
+                    hint: "Masalan, Samsung qurilmalari",
+                    controller: titleController),
                 Text(
                   "Kamida 16 ta belgi kiriting",
                   style: GoogleFonts.inter(
@@ -156,7 +146,10 @@ class _PlaceAnAdScreenState extends State<PlaceAnAdScreen> {
                 SizedBox(height: 1.h),
                 ForLocationNPic(text: "Joylashuvni kiriting", onPressed: () {}),
                 SizedBox(height: 2.h),
-                MainElevatedButton(text: "E'LONNI JOYLASHTIRISH", color: Themes.orange, onPressed: () {},
+                MainElevatedButton(
+                  text: "E'LONNI JOYLASHTIRISH",
+                  color: Themes.orange,
+                  onPressed: () {},
                 )
               ],
             ),

@@ -81,20 +81,12 @@ class _SplashScreenState extends State<SplashScreen>
                       scale: _scaleAnimation.value,
                       child: Transform.rotate(
                         angle: _rotationAnimation.value * 2 * 3.14159,
-                        child: SvgPicture.asset(
-                          width: 27.0.w,
-                          height: 14.0.h,
-                          "assets/images/main_logo.svg",
-                        ),
+                        child: SvgPicture.asset(width: 27.0.w, height: 14.0.h, "assets/images/main_logo.svg"),
                       ),
                     );
                   }),
               SizedBox(height: 2.5.h),
-              SvgPicture.asset(
-                width: 80.0.w,
-                height: 4.8.h,
-                "assets/images/ish_topdim.svg",
-              )
+              SvgPicture.asset(width: 80.0.w, height: 4.8.h, "assets/images/ish_topdim.svg")
             ],
           ),
         ),
