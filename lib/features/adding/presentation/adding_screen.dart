@@ -32,6 +32,7 @@ class _PlaceAnAdScreenState extends State<PlaceAnAdScreen> {
     super.initState();
     _controller1 = ExpansionTileController();
     _controller2 = ExpansionTileController();
+    phoneController.text = "+998";
   }
 
   String chooseText1 = "Tanlang";
