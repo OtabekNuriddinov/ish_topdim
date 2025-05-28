@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../core/theme/text_styles.dart';
 
-AppBar ProfileAppBar() => AppBar(
+AppBar profileAppBar() => AppBar(
       backgroundColor: Colors.transparent,
       surfaceTintColor: Colors.transparent,
       centerTitle: false,

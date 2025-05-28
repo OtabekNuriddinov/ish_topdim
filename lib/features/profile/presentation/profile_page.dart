@@ -15,7 +15,7 @@ class ProfileScreen extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.all(14),
       child: Scaffold(
-        appBar: ProfileAppBar(),
+        appBar: profileAppBar(),
         body: SingleChildScrollView(
           child: Column(
             spacing: 6,
@@ -24,10 +24,12 @@ class ProfileScreen extends StatelessWidget {
               MainElevatedButton(
                   text: "E'lon joylashtirish",
                   color: Themes.orange,
-                  onPressed: () {}),
+                  onPressed: () {},
+              ),
               SizedBox(height: 0.1.h),
               MainElevatedButton(
-                  text: "E'lonlarim", color: Themes.black57, onPressed: () {}),
+                  text: "E'lonlarim", color: Themes.black57, onPressed: () {},
+              ),
               const SizedBox(height: 12),
               Text("Sizning e'lonlaringiz", style: TextStyles.h4()),
               BackgroundContainer(child: Text("To'lanmagan", style: TextStyles.h6())),

@@ -144,6 +144,7 @@ class _PlaceAnAdScreenState extends State<PlaceAnAdScreen> {
                   ),
                 ),
                 MainFormField(
+                  isNumber: true,
                   hint: "",
                   controller: phoneController,
                 ),

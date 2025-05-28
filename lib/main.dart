@@ -8,16 +8,18 @@ import 'package:sizer/sizer.dart';
 
 import 'core/router/go_router.dart';
 
-void main(){
-  runApp(MultiProvider(
+void main() {
+  runApp(
+    MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_)=>CategoryProvider()),
-        ChangeNotifierProvider(create: (_)=>ForWhomProvider()),
-        ChangeNotifierProvider(create: (_)=>WorkTimeProvider()),
-        ChangeNotifierProvider(create: (_)=>SalaryProvider())
+        ChangeNotifierProvider(create: (_) => CategoryProvider()),
+        ChangeNotifierProvider(create: (_) => ForWhomProvider()),
+        ChangeNotifierProvider(create: (_) => WorkTimeProvider()),
+        ChangeNotifierProvider(create: (_) => SalaryProvider())
       ],
-    child: const MyApp(),
-  ));
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -26,7 +28,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Sizer(
-      builder: (context, orientation, screenType){
+      builder: (context, orientation, screenType) {
         return MaterialApp.router(
           debugShowCheckedModeBanner: false,
           title: "Ish Topdim",
