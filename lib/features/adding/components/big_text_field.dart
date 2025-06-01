@@ -18,7 +18,6 @@ class BigTextField extends StatelessWidget {
         hintText: "Ish haqida to'liq ma'lumot bering",
         hintStyle: GoogleFonts.inter(
           fontWeight: FontWeight.w600,
-          color: Color(0xFFC2C2C2),
           fontSize: 16.sp,
         ),
         fillColor: Color(0xFFE6E6E6),

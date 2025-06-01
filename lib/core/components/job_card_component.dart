@@ -35,7 +35,6 @@ class JobCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Themes.white,
       elevation: 10,
       child: SizedBox(
         height: 45.w,

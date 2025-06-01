@@ -17,10 +17,10 @@ class ForLocationNPic extends StatelessWidget {
       height: 140,
       width: double.infinity,
       decoration: BoxDecoration(
-          color: Color(0xFFE6E6E6), borderRadius: BorderRadius.circular(6)),
+        borderRadius: BorderRadius.circular(6),
+      ),
       child: Center(
         child: Material(
-          color: Color(0xFFE6E6E6),
           borderRadius: BorderRadius.circular(6),
           child: InkWell(
             borderRadius: BorderRadius.circular(6),

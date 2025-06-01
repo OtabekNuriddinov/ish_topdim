@@ -34,7 +34,6 @@ class _CustomBottomAppBarState extends State<CustomBottomAppBar> {
       child: Card(
         elevation: 10,
         margin: EdgeInsets.zero,
-        color: Colors.white,
         child: Container(
           decoration: BoxDecoration(
             image: DecorationImage(

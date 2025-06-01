@@ -20,7 +20,6 @@ class ExpansionItem extends StatelessWidget {
         height: 5.5.h,
         width: double.infinity,
         decoration: BoxDecoration(
-          color: Color(0xFFDADADA),
           borderRadius: BorderRadius.circular(6),
           boxShadow: [
             BoxShadow(

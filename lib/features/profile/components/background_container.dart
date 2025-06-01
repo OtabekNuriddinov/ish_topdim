@@ -14,11 +14,10 @@ class BackgroundContainer extends StatelessWidget {
       onTap: onPressed,
       child: Container(
         decoration: BoxDecoration(
-            color: backgroundColor,
             borderRadius: BorderRadius.circular(8)
         ),
         width: double.maxFinite,
-        padding: EdgeInsets.all(6),
+        padding: const EdgeInsets.all(6),
         child: child,
       ),
     );

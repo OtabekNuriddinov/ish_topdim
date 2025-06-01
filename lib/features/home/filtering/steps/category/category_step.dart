@@ -73,17 +73,17 @@ class _CategoryStepState extends State<CategoryStep> {
                   padding: EdgeInsets.symmetric(horizontal: 4.w),
                   child: Consumer<CategoryProvider>(builder: (context, provider, __) {
                     final categories = provider.categories;
-                    return ListView(
+                    return Wrap(
                       children: categories.entries.map((entry) {
                         return Align(
-                          alignment: Alignment.centerLeft,
-                          child: SelectableContainer(
+                            alignment: Alignment.centerLeft,
+                            child: SelectableContainer(
                               entryValue: entry.value,
                               onPressed: (){
                                 provider.toggleCategory(entry.key);
                               },
                               entryKey: entry.key,
-                          )
+                            )
                         );
                       }).toList(),
                     );
