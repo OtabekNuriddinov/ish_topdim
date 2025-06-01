@@ -4,12 +4,13 @@ import 'package:sizer/sizer.dart';
 class SecondaryElevatedButton extends StatelessWidget {
   final String text;
   final Color color;
+  final Color textColor;
   final VoidCallback onPressed;
   const SecondaryElevatedButton({
     super.key,
     required this.text,
     required this.color,
-    required this.onPressed,
+    required this.onPressed, this.textColor = Colors.white,
   });
 
   @override
@@ -25,7 +26,7 @@ class SecondaryElevatedButton extends StatelessWidget {
       ),
       child: Text(
         text,
-        style: TextStyle(fontSize: 17.sp, color: Colors.white),
+        style: TextStyle(fontSize: 17.sp, color: textColor),
       ),
     );
   }
