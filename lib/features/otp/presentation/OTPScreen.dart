@@ -64,7 +64,7 @@ class _OTPScreenState extends State<OTPScreen> {
                           width: 13.w,
                           height: 7.h,
                           decoration: BoxDecoration(
-                              color: provider.isDarkMode ? Color(0xFF173755) : Themes.white,
+                              color: provider.isDarkMode ? Color(0xFF173755) : Colors.grey.withAlpha(30),
                               borderRadius: BorderRadius.circular(8)),
                           child: Center(
                             child: Text(
@@ -102,7 +102,7 @@ class _OTPScreenState extends State<OTPScreen> {
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             fit: BoxFit.cover,
-                            colorFilter: ColorFilter.mode(provider.isDarkMode ? Color(0xFF0D1D2C) : Themes.white, BlendMode.srcIn),
+                            colorFilter: ColorFilter.mode(provider.isDarkMode ? Color(0xFF0D1D2C) : Color(0xFFE6E6E6), BlendMode.srcIn),
                             image: AssetImage("assets/images/keyboard_back.png"),
                           ),
                         ),
@@ -110,10 +110,10 @@ class _OTPScreenState extends State<OTPScreen> {
                           children: [
                             Positioned(
                               right: 1,
-                              top: 20,
+                              top: 10,
                               child: SvgPicture.asset(
-                                width: 50.h,
-                                  height: 50.w,
+                                width: 60.h,
+                                  height: 60.w,
                                   "assets/images/filter_back_icon.svg"),
                             ),
                             Padding(
