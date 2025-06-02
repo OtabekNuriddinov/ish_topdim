@@ -24,12 +24,14 @@ class ProfileScreen extends StatelessWidget {
             children: [
               MainElevatedButton(
                   text: "E'lon joylashtirish",
-                  color: Themes.orange,
+                  isOrange: true,
                   onPressed: () {},
               ),
               SizedBox(height: 0.1.h),
               MainElevatedButton(
-                  text: "E'lonlarim", color: Themes.black57, onPressed: () {},
+                  text: "E'lonlarim",
+                isOrange: false,
+                onPressed: () {},
               ),
               const SizedBox(height: 12),
               Text("Sizning e'lonlaringiz", style: TextStyles.h4()),
@@ -48,7 +50,9 @@ class ProfileScreen extends StatelessWidget {
                 },
               ),
               BackgroundContainer(child: Text("Yordam", style: TextStyles.h6())),
-              BackgroundContainer(backgroundColor: Themes.orange,child: Text("Chiqish", style: TextStyles.h6(color: Colors.white)),),
+              BackgroundContainer(
+                backgroundColor: Themes.orange,
+                child: Text("Chiqish", style: TextStyles.h6(color: Colors.white)),),
             ],
           ),
         ),

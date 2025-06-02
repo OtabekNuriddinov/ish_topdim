@@ -35,7 +35,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
             Text("yangi parol", style: TextStyles.h6()),
             MainFormField(hint: "", controller: newPasswordController, isSecret: true),
             Spacer(),
-            MainElevatedButton(text: "SAQLASH", color: Themes.orange, onPressed: (){})
+            MainElevatedButton(text: "SAQLASH", isOrange: true, onPressed: (){})
           ],
         ),
       ),

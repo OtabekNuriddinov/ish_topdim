@@ -45,7 +45,6 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                         textAlign: TextAlign.center,
                         style: GoogleFonts.inter(
                           fontWeight: FontWeight.w800,
-                          color: Themes.black57,
                           fontSize: 21.sp,
                         ),
                       ),
@@ -66,8 +65,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     ),
                     SizedBox(height: 4.h),
                     MainElevatedButton(
+                      isOrange: false,
                         text: AppTexts.enter,
-                        color: Themes.black57,
                       onPressed: (){
                           context.go("/onboarding/oneStep/entering/forgotPass/otp");
                       },

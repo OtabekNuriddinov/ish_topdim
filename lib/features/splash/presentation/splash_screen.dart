@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:ish_topdim/features/settings/provider/settings_provider.dart';
+import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
+
+import '../../../core/theme/themes.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -12,7 +16,6 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen>
     with TickerProviderStateMixin {
-
   late AnimationController _fadeController;
   late AnimationController _rotationController;
   late AnimationController _scaleController;
@@ -81,12 +84,33 @@ class _SplashScreenState extends State<SplashScreen>
                       scale: _scaleAnimation.value,
                       child: Transform.rotate(
                         angle: _rotationAnimation.value * 2 * 3.14159,
-                        child: SvgPicture.asset(width: 27.0.w, height: 14.0.h, "assets/images/main_logo.svg"),
+                        child: Consumer<SettingsProvider>(
+                            builder: (context, provider, __) {
+                          return SvgPicture.asset(
+                            colorFilter: ColorFilter.mode(
+                              provider.isDarkMode ? Themes.white : Themes.black,
+                              BlendMode.srcIn,
+                            ),
+                            width: 27.0.w,
+                            height: 14.0.h,
+                            "assets/images/main_logo.svg",
+                          );
+                        }),
                       ),
                     );
                   }),
               SizedBox(height: 2.5.h),
-              SvgPicture.asset(width: 80.0.w, height: 4.8.h, "assets/images/ish_topdim.svg")
+              Consumer<SettingsProvider>(builder: (context, provider, __) {
+                return SvgPicture.asset(
+                  width: 80.0.w,
+                  height: 4.8.h,
+                  colorFilter: ColorFilter.mode(
+                    provider.isDarkMode ? Themes.white : Themes.black,
+                    BlendMode.srcIn,
+                  ),
+                  "assets/images/ish_topdim.svg",
+                );
+              })
             ],
           ),
         ),

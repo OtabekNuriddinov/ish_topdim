@@ -47,9 +47,12 @@ class _PlaceAnAdScreenState extends State<PlaceAnAdScreen> {
               children: [
                 Text("E'lon haqida ma'lumot bering",
                     style: GoogleFonts.inter(
-                        fontSize: 16.sp, fontWeight: FontWeight.w500)),
+                        fontSize: 16.sp, fontWeight: FontWeight.w500,),
+                ),
                 SizedBox(height: 1.h),
-                ForLocationNPic(text: "Surat qo'shing", onPressed: () {}),
+                ForLocationNPic(
+                    text: "Surat qo'shing", onPressed: () {},
+                ),
                 SizedBox(height: 1.h),
                 Text(
                   "Sarlavha qo'shing",
@@ -77,7 +80,7 @@ class _PlaceAnAdScreenState extends State<PlaceAnAdScreen> {
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-                SizedBox(height: 1),
+                const SizedBox(height: 1),
                 ChooseExpansionTile(
                     items: ["Texnika", "Transport", "Vakansiyalar"],
                     selectedText: chooseText1,
@@ -87,7 +90,7 @@ class _PlaceAnAdScreenState extends State<PlaceAnAdScreen> {
                         chooseText1 = value;
                       });
                     }),
-                SizedBox(height: 1.5),
+                const SizedBox(height: 1.5),
                 Text(
                   "Tavsif",
                   style: GoogleFonts.inter(
@@ -148,7 +151,7 @@ class _PlaceAnAdScreenState extends State<PlaceAnAdScreen> {
                 SizedBox(height: 2.h),
                 MainElevatedButton(
                   text: "E'LONNI JOYLASHTIRISH",
-                  color: Themes.orange,
+                  isOrange: true,
                   onPressed: () {},
                 )
               ],

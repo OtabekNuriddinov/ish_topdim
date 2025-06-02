@@ -17,8 +17,9 @@ sealed class AppTheme {
       onSurface: Themes.black57,
     ),
     appBarTheme: const AppBarTheme(
-      backgroundColor: Themes.white,
-      foregroundColor: Themes.black57,
+      backgroundColor: Colors.transparent,
+      surfaceTintColor: Colors.transparent,
+
       elevation: 0,
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
@@ -73,8 +74,8 @@ sealed class AppTheme {
       onSurface: Themes.white,
     ),
     appBarTheme: const AppBarTheme(
-      backgroundColor: Themes.black57,
-      foregroundColor: Themes.white,
+      backgroundColor: Colors.transparent,
+      surfaceTintColor: Colors.transparent,
       elevation: 0,
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(

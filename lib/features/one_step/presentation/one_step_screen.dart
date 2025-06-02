@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ish_topdim/core/components/main_back_button.dart';
+import 'package:ish_topdim/core/components/secondary_elevated_button.dart';
 import 'package:ish_topdim/core/theme/app_texts.dart';
 import 'package:sizer/sizer.dart';
 class Another1Step extends StatelessWidget {
@@ -34,36 +35,20 @@ class Another1Step extends StatelessWidget {
                   ),
                 ),
                 Spacer(),
-                ElevatedButton(
-                  onPressed: () {
-                    context.go('/onboarding/oneStep/registration');
-                  },
-                  style: ElevatedButton.styleFrom(
-                    minimumSize: Size(76.w, 7.h),
-                    backgroundColor: Color(0xFFFF9D00),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(7),
-                    ),
-                  ),
-                  child: Text(
-                    AppTexts.register, style: TextStyle(fontSize: 17.sp, color: Colors.white),
-                  ),
+                SecondaryElevatedButton(
+                    text: AppTexts.register,
+                    isOrange: true,
+                    onPressed: (){
+                      context.go('/onboarding/oneStep/registration');
+                    }
                 ),
                 SizedBox(height: 2.h),
-                ElevatedButton(
-                  onPressed: () {
-                    context.go('/onboarding/oneStep/entering');
-                  },
-                  style: ElevatedButton.styleFrom(
-                    minimumSize: Size(76.w, 7.h),
-                    backgroundColor: Color(0xFFD9D9D9),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(7),
-                    ),
-                  ),
-                  child: Text(
-                    AppTexts.toAccount, style: TextStyle(fontSize: 17.sp, color: Colors.black),
-                  ),
+                SecondaryElevatedButton(
+                    text: AppTexts.toAccount,
+                    isOrange: false,
+                    onPressed: (){
+                      context.go('/onboarding/oneStep/entering');
+                    },
                 ),
                 SizedBox(height: 2.h),
               ],

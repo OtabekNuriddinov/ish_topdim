@@ -17,6 +17,7 @@ class CustomSearchBar extends StatelessWidget {
           borderRadius: BorderRadius.circular(10)),
       child: TextField(
         cursorColor: Themes.orange,
+        style: const TextStyle(color: Themes.black),
         decoration: InputDecoration(
             hintText: "Ish Izlash",
             hintStyle: GoogleFonts.inter(color: Themes.grey),

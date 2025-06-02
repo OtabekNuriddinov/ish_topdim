@@ -35,7 +35,7 @@ class _ChangeNumberScreenState extends State<ChangeNumberScreen> {
             Text("Yangi telefon raqamingiz", style: TextStyles.h6()),
             MainFormField(hint: "", controller: phoneController),
             Spacer(),
-            MainElevatedButton(text: AppTexts.load, color: Themes.orange, onPressed: (){})
+            MainElevatedButton(text: AppTexts.load, isOrange: true, onPressed: (){})
           ],
         ),
       ),

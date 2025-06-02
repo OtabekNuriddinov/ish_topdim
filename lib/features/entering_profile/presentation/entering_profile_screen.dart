@@ -1,3 +1,6 @@
+import 'package:ish_topdim/features/settings/provider/settings_provider.dart';
+import 'package:provider/provider.dart';
+
 import '../libs/entering_libs.dart';
 
 class EnteringProfileScreen extends StatefulWidget {
@@ -44,7 +47,6 @@ class _EnteringProfileScreenState extends State<EnteringProfileScreen> {
                       textAlign: TextAlign.center,
                       style: GoogleFonts.inter(
                         fontWeight: FontWeight.w800,
-                        color: Themes.black57,
                         fontSize: 21.sp,
                       ),
                     ),
@@ -56,7 +58,6 @@ class _EnteringProfileScreenState extends State<EnteringProfileScreen> {
                       textAlign: TextAlign.center,
                       style: GoogleFonts.inter(
                         fontWeight: FontWeight.w500,
-                        color: Themes.black57,
                         fontSize: 15.sp,
                       ),
                     ),
@@ -82,27 +83,31 @@ class _EnteringProfileScreenState extends State<EnteringProfileScreen> {
                   MainFormField(hint: AppTexts.enterPass, controller: passwordController, isSecret: true
                   ),
                   SizedBox(height: 0.7.h),
-                  RichText(
-                      text: TextSpan(
-                        children: [
-                          TextSpan(
-                            text: AppTexts.forgotPass,
-                            style: GoogleFonts.inter(
-                              decoration: TextDecoration.underline,
-                              fontWeight: FontWeight.w600,
-                              fontSize: 16.sp,
-                              color: Themes.black57
-                            ),
-                            recognizer: TapGestureRecognizer()
-                              ..onTap = (){
-                               context.push("/onboarding/oneStep/entering/forgotPass");
-                              }
+                  Consumer<SettingsProvider>(
+                    builder: (context, provider, __) {
+                      return RichText(
+                          text: TextSpan(
+                            children: [
+                              TextSpan(
+                                text: AppTexts.forgotPass,
+                                style: GoogleFonts.inter(
+                                  decoration: TextDecoration.underline,
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 16.sp,
+                                  color: provider.isDarkMode ? Themes.white:Themes.black
+                                ),
+                                recognizer: TapGestureRecognizer()
+                                  ..onTap = (){
+                                   context.push("/onboarding/oneStep/entering/forgotPass");
+                                  }
+                              )
+                            ]
                           )
-                        ]
-                      )
+                      );
+                    }
                   ),
                   SizedBox(height: 4.h),
-                  MainElevatedButton(text: AppTexts.enter, color: Themes.black57, onPressed: (){
+                  MainElevatedButton(text: AppTexts.enter, isOrange: false,onPressed: (){
                         context.go("/home");
                     },
                   ),

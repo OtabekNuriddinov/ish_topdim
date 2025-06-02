@@ -41,7 +41,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
               Spacer(),
               MainElevatedButton(
                   text: "SAQLASH",
-                  color: Themes.orange,
+                  isOrange: true,
                   onPressed: (){}
               )
             ],

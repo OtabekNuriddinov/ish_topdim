@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
-
 import '../theme/text_styles.dart';
 import '../theme/themes.dart';
 
@@ -15,7 +13,6 @@ sealed class AppDialog {
     required void Function() pressRight,
   }) {
     return showDialog(
-
         context: context,
         builder: (context) {
           return AlertDialog(
@@ -48,7 +45,7 @@ sealed class AppDialog {
                       style: ElevatedButton.styleFrom(
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8)),
-                          backgroundColor: Color(0xFF0A1724)),
+                          backgroundColor: Color(0xFF0A1724),),
                       onPressed: pressLeft,
                       child: Text(
                         leftButText,

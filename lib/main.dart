@@ -7,7 +7,6 @@ import 'package:ish_topdim/features/home/filtering/steps/work_time/provider/work
 import 'package:ish_topdim/features/settings/provider/settings_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
-
 import 'core/router/go_router.dart';
 
 void main() {

@@ -96,7 +96,6 @@ class _OnBoardingState extends State<OnBoarding> {
             SizedBox(height: 4.h),
             SecondaryElevatedButton(
                 text: AppTexts.next,
-                color: Themes.black57,
                 onPressed: (){
                   if (_currentIndex < list.length - 1) {
                     _controller.nextPage(
@@ -106,7 +105,7 @@ class _OnBoardingState extends State<OnBoarding> {
                   } else {
                     context.go('/onboarding/oneStep');
                   }
-                }
+                }, isOrange: false,
             ),
             SizedBox(height: 2.h),
           ],
