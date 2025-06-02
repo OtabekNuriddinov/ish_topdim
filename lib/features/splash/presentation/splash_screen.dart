@@ -76,41 +76,45 @@ class _SplashScreenState extends State<SplashScreen>
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               AnimatedBuilder(
-                  animation: Listenable.merge(
-                    [_rotationAnimation, _scaleAnimation],
-                  ),
-                  builder: (context, child) {
-                    return Transform.scale(
-                      scale: _scaleAnimation.value,
-                      child: Transform.rotate(
-                        angle: _rotationAnimation.value * 2 * 3.14159,
-                        child: Consumer<SettingsProvider>(
-                            builder: (context, provider, __) {
+                animation: Listenable.merge(
+                  [_rotationAnimation, _scaleAnimation],
+                ),
+                builder: (context, child) {
+                  return Transform.scale(
+                    scale: _scaleAnimation.value,
+                    child: Transform.rotate(
+                      angle: _rotationAnimation.value * 2 * 3.14159,
+                      child: Consumer<SettingsProvider>(
+                        builder: (context, provider, __) {
                           return SvgPicture.asset(
                             colorFilter: ColorFilter.mode(
                               provider.isDarkMode ? Themes.white : Themes.black,
                               BlendMode.srcIn,
                             ),
-                            width: 27.0.w,
-                            height: 14.0.h,
+                            width: 25.0.w,
+                            height: 12.0.h,
                             "assets/images/main_logo.svg",
                           );
-                        }),
+                        },
                       ),
-                    );
-                  }),
-              SizedBox(height: 6.h),
-              Consumer<SettingsProvider>(builder: (context, provider, __) {
-                return SvgPicture.asset(
-                  width: 80.0.w,
-                  height: 4.8.h,
-                  colorFilter: ColorFilter.mode(
-                    provider.isDarkMode ? Themes.white : Themes.black,
-                    BlendMode.srcIn,
-                  ),
-                  "assets/images/ish_topdim.svg",
-                );
-              })
+                    ),
+                  );
+                },
+              ),
+              SizedBox(height: 4.h),
+              Consumer<SettingsProvider>(
+                builder: (context, provider, __) {
+                  return SvgPicture.asset(
+                    width: 70.0.w,
+                    height: 4.0.h,
+                    colorFilter: ColorFilter.mode(
+                      provider.isDarkMode ? Themes.white : Themes.black,
+                      BlendMode.srcIn,
+                    ),
+                    "assets/images/ish_topdim.svg",
+                  );
+                },
+              ),
             ],
           ),
         ),
