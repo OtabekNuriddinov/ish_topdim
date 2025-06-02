@@ -1,5 +1,6 @@
-import 'router_libs.dart';
+import 'package:ish_topdim/features/settings/presentation/settings_screen.dart';
 
+import 'router_libs.dart';
 
 final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>();
 final GlobalKey<NavigatorState> shellNavigatorKey = GlobalKey<NavigatorState>();
@@ -30,8 +31,8 @@ final GoRouter router = GoRouter(
                   builder: (context, state) => const ForgotPasswordScreen(),
                   routes: [
                     GoRoute(
-                        path: "otp",
-                        builder: (context, state) => const OTPScreen(),
+                      path: "otp",
+                      builder: (context, state) => const OTPScreen(),
                     )
                   ],
                 ),
@@ -65,12 +66,12 @@ final GoRouter router = GoRouter(
             GoRoute(
               parentNavigatorKey: rootNavigatorKey,
               path: "notifications",
-              builder: (context , state)=> const NotificationsScreen(),
+              builder: (context, state) => const NotificationsScreen(),
             ),
             GoRoute(
               parentNavigatorKey: rootNavigatorKey,
               path: 'filter',
-                builder: (context, state) => const FilterScreen(),
+              builder: (context, state) => const FilterScreen(),
             ),
           ],
         ),
@@ -79,12 +80,16 @@ final GoRouter router = GoRouter(
           builder: (context, state) => const FavoritesPage(),
         ),
         GoRoute(
-            path: "/add",
-            builder: (context, state) => const PlaceAnAdScreen()
-        ),
+            path: "/add", builder: (context, state) => const PlaceAnAdScreen()),
         GoRoute(
           path: '/profile',
           builder: (context, state) => const ProfileScreen(),
+          routes: [
+            GoRoute(
+              path: "settings",
+              builder: (context, state) => const SettingsScreen(),
+            )
+          ],
         )
       ],
     ),

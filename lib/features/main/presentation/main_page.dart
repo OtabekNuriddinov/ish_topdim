@@ -12,7 +12,7 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      body: Padding(padding: EdgeInsets.all(10),
+      body: Padding(padding: const EdgeInsets.symmetric(horizontal: 4),
       child: child),
       bottomNavigationBar: CustomBottomAppBar(
         onChanged: (index) {
