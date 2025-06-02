@@ -102,7 +102,7 @@ class _SplashScreenState extends State<SplashScreen>
                   );
                 },
               ),
-              SizedBox(height: 2.2.h),
+              SizedBox(height: 2.6.h),
               Consumer<SettingsProvider>(
                 builder: (context, provider, __) {
                   return Text("ISH TOPDIM", style: GoogleFonts.inter(
