@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:ish_topdim/features/adding/libs/adding_libs.dart';
 import 'package:ish_topdim/features/settings/provider/settings_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
@@ -101,18 +102,14 @@ class _SplashScreenState extends State<SplashScreen>
                   );
                 },
               ),
-              SizedBox(height: 4.h),
+              SizedBox(height: 2.2.h),
               Consumer<SettingsProvider>(
                 builder: (context, provider, __) {
-                  return SvgPicture.asset(
-                    width: 70.0.w,
-                    height: 4.0.h,
-                    colorFilter: ColorFilter.mode(
-                      provider.isDarkMode ? Themes.white : Themes.black,
-                      BlendMode.srcIn,
-                    ),
-                    "assets/images/ish_topdim.svg",
-                  );
+                  return Text("ISH TOPDIM", style: GoogleFonts.inter(
+                    fontWeight: FontWeight.w800,
+                    fontSize: 38.sp,
+                    color: provider.isDarkMode ? Themes.white : Themes.black,
+                  ),);
                 },
               ),
             ],
