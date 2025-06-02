@@ -11,7 +11,10 @@ import 'package:ish_topdim/features/home/components/search_bar.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
-  static const List< String> ishlar = [
+  static const List< String> _keyskills = [
+    "To'liq stafka",
+    "Online",
+    "Middle",
     "To'liq stafka",
     "Online",
     "Middle",
@@ -20,7 +23,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(20),
+      padding: const EdgeInsets.all(8),
       child: Scaffold(
         appBar: homeAppBar(context: context),
         body: SingleChildScrollView(
@@ -78,7 +81,51 @@ class HomeScreen extends StatelessWidget {
                       agency: "SMM Agency",
                       town: "Toshkent shahri",
                       job: "Graphic Designer",
-                      keySkills: ishlar,
+                      keySkills: _keyskills,
+                      companyImageUrl:
+                          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiiT0HC9ZD1pgOHuk9tOqLsmpQRDXsRh2Tbyfs7WNmervMtcX78e35DHdXXqVmyNWvNfs&usqp=CAU",
+                      salary: 500,
+                      createdTime: DateTime(2025, 2, 16),
+                      volunteers: 22,
+                    ),
+                    JobCard(
+                      agency: "SMM Agency",
+                      town: "Toshkent shahri",
+                      job: "Graphic Designer",
+                      keySkills: _keyskills,
+                      companyImageUrl:
+                          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiiT0HC9ZD1pgOHuk9tOqLsmpQRDXsRh2Tbyfs7WNmervMtcX78e35DHdXXqVmyNWvNfs&usqp=CAU",
+                      salary: 500,
+                      createdTime: DateTime(2025, 2, 16),
+                      volunteers: 22,
+                    ),
+                    JobCard(
+                      agency: "SMM Agency",
+                      town: "Toshkent shahri",
+                      job: "Graphic Designer",
+                      keySkills: _keyskills,
+                      companyImageUrl:
+                          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiiT0HC9ZD1pgOHuk9tOqLsmpQRDXsRh2Tbyfs7WNmervMtcX78e35DHdXXqVmyNWvNfs&usqp=CAU",
+                      salary: 500,
+                      createdTime: DateTime(2025, 2, 16),
+                      volunteers: 22,
+                    ),
+                    JobCard(
+                      agency: "SMM Agency",
+                      town: "Toshkent shahri",
+                      job: "Graphic Designer",
+                      keySkills: _keyskills,
+                      companyImageUrl:
+                          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiiT0HC9ZD1pgOHuk9tOqLsmpQRDXsRh2Tbyfs7WNmervMtcX78e35DHdXXqVmyNWvNfs&usqp=CAU",
+                      salary: 500,
+                      createdTime: DateTime(2025, 2, 16),
+                      volunteers: 22,
+                    ),
+                    JobCard(
+                      agency: "SMM Agency",
+                      town: "Toshkent shahri",
+                      job: "Graphic Designer",
+                      keySkills: _keyskills,
                       companyImageUrl:
                           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiiT0HC9ZD1pgOHuk9tOqLsmpQRDXsRh2Tbyfs7WNmervMtcX78e35DHdXXqVmyNWvNfs&usqp=CAU",
                       salary: 500,
@@ -100,7 +147,30 @@ class HomeScreen extends StatelessWidget {
                       agency: "Kiyim sexi uchun",
                       town: "Toshkent shahri",
                       job: "SMM Manager",
-                      keySkills: ishlar,
+                      keySkills: _keyskills,
+                      companyImageUrl:
+                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiiT0HC9ZD1pgOHuk9tOqLsmpQRDXsRh2Tbyfs7WNmervMtcX78e35DHdXXqVmyNWvNfs&usqp=CAU",
+                      salary: 700,
+                      createdTime: DateTime(2025, 2, 16),
+                      volunteers: 22,
+                    ),
+                    JobCard(
+                      agency: "Kiyim sexi uchun",
+                      town: "Toshkent shahri",
+                      job: "SMM Manager",
+                      keySkills: _keyskills,
+                      companyImageUrl:
+
+                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiiT0HC9ZD1pgOHuk9tOqLsmpQRDXsRh2Tbyfs7WNmervMtcX78e35DHdXXqVmyNWvNfs&usqp=CAU",
+                      salary: 700,
+                      createdTime: DateTime(2025, 2, 16),
+                      volunteers: 22,
+                    ),
+                    JobCard(
+                      agency: "Kiyim sexi uchun",
+                      town: "Toshkent shahri",
+                      job: "SMM Manager",
+                      keySkills: _keyskills,
                       companyImageUrl:
                       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiiT0HC9ZD1pgOHuk9tOqLsmpQRDXsRh2Tbyfs7WNmervMtcX78e35DHdXXqVmyNWvNfs&usqp=CAU",
                       salary: 700,

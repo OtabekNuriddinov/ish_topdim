@@ -1,25 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:ish_topdim/features/adding/presentation/adding_screen.dart';
-import 'package:ish_topdim/features/change_number/presentation/change_number_screen.dart';
-import 'package:ish_topdim/features/change_theme/presentation/change_theme_screen.dart';
-import 'package:ish_topdim/features/edit_profile/presentation/edit_profile_screen.dart';
-import 'package:ish_topdim/features/entering_profile/presentation/entering_profile_screen.dart';
-import 'package:ish_topdim/features/favorites/presentation/favorites_page.dart';
-import 'package:ish_topdim/features/home/filtering/presentation/filter_screen.dart';
-import 'package:ish_topdim/features/home/presentation/home_screen.dart';
-import 'package:ish_topdim/features/one_step/presentation/one_step_screen.dart';
-import 'package:ish_topdim/features/registration/presentation/registration_screen.dart';
 import 'package:ish_topdim/features/settings/presentation/settings_screen.dart';
 
-import '../../features/change_password/presentation/change_password_screen.dart';
-import '../../features/forgot_pass/presentation/forgot_password_screen.dart';
-import '../../features/home/notifications/presentation/notifications_screen.dart';
-import '../../features/main/presentation/main_page.dart';
-import '../../features/onboarding/presentation/onboarding_screen.dart';
-import '../../features/otp/presentation/OTPScreen.dart';
-import '../../features/profile/presentation/profile_page.dart';
-import '../../features/splash/presentation/splash_screen.dart';
+import 'router_libs.dart';
 
 final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>();
 final GlobalKey<NavigatorState> shellNavigatorKey = GlobalKey<NavigatorState>();
@@ -50,8 +31,8 @@ final GoRouter router = GoRouter(
                   builder: (context, state) => const ForgotPasswordScreen(),
                   routes: [
                     GoRoute(
-                        path: "otp",
-                        builder: (context, state) => const OTPScreen(),
+                      path: "otp",
+                      builder: (context, state) => const OTPScreen(),
                     )
                   ],
                 ),
@@ -85,12 +66,12 @@ final GoRouter router = GoRouter(
             GoRoute(
               parentNavigatorKey: rootNavigatorKey,
               path: "notifications",
-              builder: (context , state)=> const NotificationsScreen(),
+              builder: (context, state) => const NotificationsScreen(),
             ),
             GoRoute(
               parentNavigatorKey: rootNavigatorKey,
               path: 'filter',
-                builder: (context, state) => const FilterScreen(),
+              builder: (context, state) => const FilterScreen(),
             ),
           ],
         ),
@@ -99,43 +80,17 @@ final GoRouter router = GoRouter(
           builder: (context, state) => const FavoritesPage(),
         ),
         GoRoute(
-            path: "/add",
-            builder: (context, state) => const PlaceAnAdScreen()
-        ),
+            path: "/add", builder: (context, state) => const PlaceAnAdScreen()),
         GoRoute(
           path: '/profile',
           builder: (context, state) => const ProfileScreen(),
           routes: [
             GoRoute(
-                parentNavigatorKey: rootNavigatorKey,
-                path: 'settings',
-                builder: (context, state) => const SettingsScreen(),
-              routes: [
-                GoRoute(
-                    parentNavigatorKey: rootNavigatorKey,
-                    path: 'edit-profile',
-                  builder: (context, state) => const EditProfileScreen()
-                ),
-                GoRoute(
-                    parentNavigatorKey: rootNavigatorKey,
-                    path: 'change-password',
-                    builder: (context, state) => const ChangePasswordScreen()
-                ),
-                GoRoute(
-                    parentNavigatorKey: rootNavigatorKey,
-                    path: 'change-number',
-                    builder: (context, state) => const ChangeNumberScreen()
-                ),
-                GoRoute(
-                    parentNavigatorKey: rootNavigatorKey,
-                    path: 'change-theme',
-                    builder: (context, state) => const ChangeThemeScreen()
-                ),
-              ]
+              path: "settings",
+              builder: (context, state) => const SettingsScreen(),
             )
-          ]
-        ),
-
+          ],
+        )
       ],
     ),
   ],
