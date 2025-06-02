@@ -99,7 +99,7 @@ class _SplashScreenState extends State<SplashScreen>
                       ),
                     );
                   }),
-              SizedBox(height: 3.7.h),
+              SizedBox(height: 6.h),
               Consumer<SettingsProvider>(builder: (context, provider, __) {
                 return SvgPicture.asset(
                   width: 80.0.w,
