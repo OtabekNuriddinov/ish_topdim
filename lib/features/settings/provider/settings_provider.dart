@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:ish_topdim/features/adding/libs/adding_libs.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -13,19 +14,23 @@ class SettingsProvider extends ChangeNotifier {
 
   Future<void> _loadThemePreference() async {
     _prefs = await SharedPreferences.getInstance();
-    _isDarkMode = _prefs.getBool(_themeKey) ?? true;
+    _isDarkMode = _prefs.getBool(_themeKey) ?? false;
     notifyListeners();
   }
 
   Future<void> setLight() async {
-    _isDarkMode = false;
-    await _prefs.setBool(_themeKey, false);
-    notifyListeners();
+    if (_isDarkMode) {
+      _isDarkMode = false;
+      await _prefs.setBool(_themeKey, false);
+      notifyListeners();
+    }
   }
 
   Future<void> setDark() async {
-    _isDarkMode = true;
-    await _prefs.setBool(_themeKey, true);
-    notifyListeners();
+    if (!_isDarkMode) {
+      _isDarkMode = true;
+      await _prefs.setBool(_themeKey, true);
+      notifyListeners();
+    }
   }
 }

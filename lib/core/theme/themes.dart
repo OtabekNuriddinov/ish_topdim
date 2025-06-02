@@ -13,6 +13,7 @@ sealed class Themes{
   static const Color greyText = Color(0xFFA0A0A0);
   static const Color white = Color(0xFFFFFFFF);
 
+  static const Color darkBlue = Color(0xFF173755);
 
 
 

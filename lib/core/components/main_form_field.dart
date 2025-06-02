@@ -49,13 +49,13 @@ class _MainFormFieldState extends State<MainFormField> {
             keyboardType: widget.isNumber==true?TextInputType.phone : TextInputType.text,
             controller: widget.controller,
             cursorColor: Themes.orange,
-            style: TextStyle(color: provider.isDarkMode ? Themes.white : Themes.black57),
+            style: TextStyle(color: provider.isDarkMode?Themes.white:Themes.black57),
             obscureText: widget.isSecret == true ? _obscureText : false,
             decoration: InputDecoration(
               hintText: widget.hint,
               hintStyle: GoogleFonts.inter(
                   fontWeight: FontWeight.w600,
-                  color: provider.isDarkMode ? Themes.white : Themes.black57,
+                  color: Color(0xFFC2C2C2),
                   fontSize: 12.sp,
               ),
               fillColor: !provider.isDarkMode ? Color(0xFFE6E6E6) : Colors.grey.withAlpha(30),

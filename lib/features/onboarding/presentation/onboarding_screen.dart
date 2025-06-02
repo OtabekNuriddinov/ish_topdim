@@ -105,7 +105,8 @@ class _OnBoardingState extends State<OnBoarding> {
                   } else {
                     context.go('/onboarding/oneStep');
                   }
-                }, isOrange: false,
+                },
+              isOrange: false,
             ),
             SizedBox(height: 2.h),
           ],

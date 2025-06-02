@@ -39,14 +39,14 @@ class Another1Step extends StatelessWidget {
               Spacer(),
               SecondaryElevatedButton(
                   text: AppTexts.register,
-                  color: Themes.orange,
+                  isOrange: true,
                   onPressed: () =>
                       context.go('/onboarding/oneStep/registration')),
               SizedBox(height: 2.h),
               SecondaryElevatedButton(
-                textColor: Themes.black,
                   text: AppTexts.toAccount,
-                  color: Color(0xFFD9D9D9),
+                  isOrange: false,
+                  textColor: Themes.white,
                   onPressed: () => context.go('/onboarding/oneStep/entering')),
               SizedBox(height: 2.h),
             ],

@@ -1,3 +1,7 @@
+import 'package:ish_topdim/features/change_number/presentation/change_number_screen.dart';
+import 'package:ish_topdim/features/change_password/presentation/change_password_screen.dart';
+import 'package:ish_topdim/features/change_theme/presentation/change_theme_screen.dart';
+import 'package:ish_topdim/features/edit_profile/presentation/edit_profile_screen.dart';
 import 'package:ish_topdim/features/settings/presentation/settings_screen.dart';
 
 import 'router_libs.dart';
@@ -88,6 +92,24 @@ final GoRouter router = GoRouter(
             GoRoute(
               path: "settings",
               builder: (context, state) => const SettingsScreen(),
+              routes: [
+                GoRoute(
+                    path: 'edit-profile',
+                  builder: (context, state) => const EditProfileScreen(),
+                ),
+                GoRoute(
+                  path: 'change-number',
+                  builder: (context, state) => const ChangeNumberScreen(),
+                ),
+                GoRoute(
+                  path: 'change-password',
+                  builder: (context, state) => const ChangePasswordScreen(),
+                ),
+                GoRoute(
+                  path: 'change-theme',
+                  builder: (context, state) => const ChangeThemeScreen(),
+                ),
+              ]
             )
           ],
         )

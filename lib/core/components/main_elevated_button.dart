@@ -26,9 +26,7 @@ class MainElevatedButton extends StatelessWidget {
         return ElevatedButton(
             style: ElevatedButton.styleFrom(
                 minimumSize: Size(double.infinity, 7.h),
-                backgroundColor: isOrange!
-                    ?
-                Themes.orange:(provider.isDarkMode ? const Color(0xFF173755) : Themes.black57),
+                backgroundColor: isOrange ? Themes.orange : (provider.isDarkMode?Themes.darkBlue:Themes.black57),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(7)
                 )

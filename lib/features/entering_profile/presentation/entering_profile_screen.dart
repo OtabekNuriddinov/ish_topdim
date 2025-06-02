@@ -107,7 +107,9 @@ class _EnteringProfileScreenState extends State<EnteringProfileScreen> {
                     }
                   ),
                   SizedBox(height: 4.h),
-                  MainElevatedButton(text: AppTexts.enter, isOrange: false,onPressed: (){
+                  MainElevatedButton(
+                    text: AppTexts.enter,
+                    isOrange: false,onPressed: (){
                         context.go("/home");
                     },
                   ),

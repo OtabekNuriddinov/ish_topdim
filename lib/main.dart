@@ -39,8 +39,14 @@ class MyApp extends StatelessWidget {
               title: "Ish Topdim",
               routerConfig: router,
               theme: AppTheme.lightTheme,
-              darkTheme: AppTheme.lightTheme,
+              darkTheme: AppTheme.darkTheme,
               themeMode: provider.isDarkMode ? ThemeMode.dark : ThemeMode.light,
+              builder: (context, child) {
+                return Theme(
+                  data: provider.isDarkMode ? AppTheme.darkTheme : AppTheme.lightTheme,
+                  child: child!,
+                );
+              },
             );
           }
         );
