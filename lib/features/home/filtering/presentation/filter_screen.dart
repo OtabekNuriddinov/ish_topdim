@@ -5,7 +5,8 @@ import 'package:ish_topdim/features/home/filtering/steps/for_whom/for_whom_step.
 import 'package:ish_topdim/features/home/filtering/steps/salary/salary_step.dart';
 import 'package:ish_topdim/features/home/filtering/steps/work_time/work_time_step.dart';
 import '../steps/category/category_step.dart';
-
+import 'package:provider/provider.dart';
+import '../provider/filter_provider.dart';
 
 class FilterScreen extends StatefulWidget {
   const FilterScreen({super.key});
@@ -23,19 +24,19 @@ class _FilterScreenState extends State<FilterScreen> {
         currentStep++;
       });
     } else {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Filterlash tugadi')),
-      );
+      final filterProvider = context.read<FilterProvider>();
+      final selectedFilters = filterProvider.selectedFilters;
+
+      context.pop();
     }
   }
 
-  void previousStep(){
-    if(currentStep==0){
-       if(mounted){
-          context.pop(context);
-        }
-    }
-    else{
+  void previousStep() {
+    if (currentStep == 0) {
+      if (mounted) {
+        context.pop(context);
+      }
+    } else {
       setState(() {
         currentStep--;
       });

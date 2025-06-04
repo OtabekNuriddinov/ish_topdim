@@ -1,6 +1,7 @@
- import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ish_topdim/features/home/filtering/components/filter_chip.dart';
 import 'package:ish_topdim/features/home/filtering/steps/work_time/provider/work_time_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
@@ -75,19 +76,18 @@ class WorkTimeStep extends StatefulWidget {
              padding: EdgeInsets.symmetric(horizontal: 4.w),
              child: Consumer<WorkTimeProvider>(builder: (context, provider, __) {
                final workTime = provider.workTime;
-               return ListView(
-                 children: workTime.entries.map((entry) {
-                   return Align(
-                       alignment: Alignment.centerLeft,
-                       child: SelectableContainer(
-                         entryValue: entry.value,
-                         onPressed: (){
-                           provider.toggleWorkTime(entry.key);
-                         },
-                         entryKey: entry.key,
-                       )
-                   );
-                 }).toList(),
+               return Padding(
+                 padding:  EdgeInsets.symmetric(horizontal: 6.w, vertical: 1.h),
+                 child: Wrap(
+                   spacing: 6.0,
+                   runSpacing: 4.0,
+                   children: [
+                     FilterChipWidget(chipName: "7:00 19:00", type: 'workTime'),
+                     FilterChipWidget(chipName: "9:00 22:00", type: 'workTime'),
+                     FilterChipWidget(chipName: "8:00 20:00", type: 'workTime'),
+                     FilterChipWidget(chipName: "5:00 16:00", type: 'workTime'),
+                   ],
+                 ),
                );
              }),
            ),

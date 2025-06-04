@@ -8,17 +8,33 @@ import 'package:ish_topdim/features/settings/provider/settings_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 import 'core/router/go_router.dart';
+import 'features/home/filtering/provider/filter_provider.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(
     MultiProvider(
       providers: [
+        ChangeNotifierProvider(create: (_) => SettingsProvider()),
         ChangeNotifierProvider(create: (_) => CategoryProvider()),
         ChangeNotifierProvider(create: (_) => ForWhomProvider()),
         ChangeNotifierProvider(create: (_) => WorkTimeProvider()),
         ChangeNotifierProvider(create: (_) => SalaryProvider()),
-        ChangeNotifierProvider(create: (_) => SettingsProvider())
+        ChangeNotifierProxyProvider4<CategoryProvider, ForWhomProvider, WorkTimeProvider, SalaryProvider, FilterProvider>(
+          create: (context) => FilterProvider(
+            categoryProvider: context.read<CategoryProvider>(),
+            forWhomProvider: context.read<ForWhomProvider>(),
+            workTimeProvider: context.read<WorkTimeProvider>(),
+            salaryProvider: context.read<SalaryProvider>(),
+          ),
+          update: (context, categoryProvider, forWhomProvider, workTimeProvider, salaryProvider, previous) => 
+            FilterProvider(
+              categoryProvider: categoryProvider,
+              forWhomProvider: forWhomProvider,
+              workTimeProvider: workTimeProvider,
+              salaryProvider: salaryProvider,
+            ),
+        ),
       ],
       child: const MyApp(),
     ),

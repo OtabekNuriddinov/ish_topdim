@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 
 class CategoryProvider extends ChangeNotifier{
-  final Map<String, bool> _categories = {
-    "Kiyim kechak": false,
-    "Mebel fabrikasi": false,
-    "It sohasi": false,
-  };
-  Map<String, bool> get categories => _categories;
+  final List<String> _selectedCategories = [];
 
-  void toggleCategory(String key){
-    _categories[key] = !_categories[key]!;
+  List<String> get selectedCategories => _selectedCategories;
+
+  void toggleCategory(String category){
+    if(_selectedCategories.contains(category)){
+      _selectedCategories.remove(category);
+    }
+    else{
+      _selectedCategories.add(category);
+    }
     notifyListeners();
   }
 
-
-  List<String> get selectedCategories => _categories.entries
-      .where((entry) => entry.value)
-      .map((entry) => entry.key)
-      .toList();
+  bool isSelected(String category){
+    return _selectedCategories.contains(category);
+  }
 }
