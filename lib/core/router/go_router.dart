@@ -9,6 +9,12 @@ import 'router_libs.dart';
 final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>();
 final GlobalKey<NavigatorState> shellNavigatorKey = GlobalKey<NavigatorState>();
 
+
+final _otpRoute = GoRoute(
+    path: "otp",
+  builder: (context, state) => const OTPScreen()
+);
+
 final GoRouter router = GoRouter(
   navigatorKey: rootNavigatorKey,
   initialLocation: '/splash',
@@ -25,6 +31,7 @@ final GoRouter router = GoRouter(
             GoRoute(
               path: 'registration',
               builder: (context, state) => const RegistrationScreen(),
+              routes: [_otpRoute]
             ),
             GoRoute(
               path: 'entering',
@@ -33,12 +40,7 @@ final GoRouter router = GoRouter(
                 GoRoute(
                   path: 'forgotPass',
                   builder: (context, state) => const ForgotPasswordScreen(),
-                  routes: [
-                    GoRoute(
-                      path: "otp",
-                      builder: (context, state) => const OTPScreen(),
-                    )
-                  ],
+                  routes: [_otpRoute],
                 ),
               ],
             ),

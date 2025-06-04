@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ish_topdim/features/home/filtering/components/filter_chip.dart';
-import 'package:ish_topdim/features/home/filtering/components/selectable_container.dart';
 import 'package:ish_topdim/features/home/filtering/steps/salary/provider/salary_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
