@@ -6,10 +6,11 @@ import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../../../core/theme/themes.dart';
+import '../../components/filter_chip.dart';
 import 'provider/category_provider.dart';
 
 class CategoryStep extends StatefulWidget {
-  final VoidCallback onNext;
+  final void Function() onNext;
   const CategoryStep({required this.onNext, super.key});
 
   @override
@@ -69,25 +70,30 @@ class _CategoryStepState extends State<CategoryStep> {
                 child: const Divider(),
               ),
               Expanded(
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 4.w),
-                  child: Consumer<CategoryProvider>(builder: (context, provider, __) {
-                    final categories = provider.categories;
-                    return Wrap(
-                      children: categories.entries.map((entry) {
-                        return Align(
-                            alignment: Alignment.centerLeft,
-                            child: SelectableContainer(
-                              entryValue: entry.value,
-                              onPressed: (){
-                                provider.toggleCategory(entry.key);
-                              },
-                              entryKey: entry.key,
-                            )
-                        );
-                      }).toList(),
-                    );
-                  }),
+                child: SingleChildScrollView(
+                  child: Consumer<CategoryProvider>(
+                    builder: (context, provider, __) {
+                      return Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 1.h),
+                        child: const Wrap(
+                          spacing: 6.0,
+                          runSpacing: 4.0,
+                          children: [
+                            FilterChipWidget(chipName: "IT Sohasi", type: 'category'),
+                            FilterChipWidget(chipName: "Kiyim Kechak", type: 'category'),
+                            FilterChipWidget(chipName: "Ofis", type: 'category'),
+                            FilterChipWidget(chipName: "Ra'lim", type: 'category'),
+                            FilterChipWidget(chipName: "Sotuv", type: 'category'),
+                            FilterChipWidget(chipName: "Elektronika", type: 'category'),
+                            FilterChipWidget(chipName: "Qurilish", type: 'category'),
+                            FilterChipWidget(chipName: "Go'zallik Saloni", type: 'category'),
+                            FilterChipWidget(chipName: "Oziq Ovqat", type: 'category'),
+                            FilterChipWidget(chipName: "Bozor", type: 'category'),
+                          ],
+                        ),
+                      );
+                    }
+                  )
                 ),
               ),
               Padding(
@@ -104,8 +110,8 @@ class _CategoryStepState extends State<CategoryStep> {
                         ),
                       ),
                       onPressed: () {
-                        print("TANLANGANLAR:");
-                        print(provider.selectedCategories);
+                        final selected = provider.selectedCategories;
+                        print("Tanlanganlar: $selected");
                         widget.onNext();
                       },
                       child: Text(
@@ -127,3 +133,6 @@ class _CategoryStepState extends State<CategoryStep> {
     );
   }
 }
+
+
+

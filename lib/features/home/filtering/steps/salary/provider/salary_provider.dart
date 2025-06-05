@@ -5,6 +5,7 @@ class SalaryProvider extends ChangeNotifier {
     "3.000.000 so'm": false,
     "3.500.000 so'm": false,
     "4.000.000 so'm": false,
+    "4.500.000 so'm": false,
     "5.000.000 so'm": false,
   };
 

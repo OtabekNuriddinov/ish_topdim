@@ -113,19 +113,20 @@ class _EnteringProfileScreenState extends State<EnteringProfileScreen> {
                         context.go("/home");
                     },
                   ),
-                  SizedBox(height: 8.h),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SocialIcons(iconPath: "assets/icons/google_icon.svg", onPressed: (){},
-                      ),
-                      SizedBox(width: 4.w),
-                      SocialIcons(iconPath: "assets/icons/apple_icon.svg", onPressed: (){},),
-                      SizedBox(width: 4.w),
-                      SocialIcons(iconPath: "assets/icons/facebook_icon.svg", onPressed: (){}),
-                    ],
-                  ),
-                  SizedBox(height: 1.7.h),
+                  SizedBox(height: 4.h),
+                  /// KEYINCHALIK bo'lishi mumkin
+                  // Row(
+                  //   mainAxisAlignment: MainAxisAlignment.center,
+                  //   children: [
+                  //     SocialIcons(iconPath: "assets/icons/google_icon.svg", onPressed: (){},
+                  //     ),
+                  //     SizedBox(width: 4.w),
+                  //     SocialIcons(iconPath: "assets/icons/apple_icon.svg", onPressed: (){},),
+                  //     SizedBox(width: 4.w),
+                  //     SocialIcons(iconPath: "assets/icons/facebook_icon.svg", onPressed: (){}),
+                  //   ],
+                  // ),
+                  SizedBox(height: 0.5.h),
                   Align(
                     alignment: Alignment.center,
                     child: MyRichText(

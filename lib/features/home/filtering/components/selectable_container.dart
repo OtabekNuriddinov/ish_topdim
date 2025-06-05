@@ -20,8 +20,8 @@ class SelectableContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<SettingsProvider>(builder: (context, provider, __) {
       return Container(
-        margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+        margin: const EdgeInsets.only(right: 8, bottom: 8, left: 14),
+        padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 6),
         decoration: BoxDecoration(
           border: Border.all(color: Colors.grey.shade400),
           borderRadius: BorderRadius.circular(30),

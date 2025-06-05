@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ish_topdim/features/home/filtering/components/selectable_container.dart';
+import 'package:ish_topdim/features/home/filtering/components/filter_chip.dart';
 import 'package:ish_topdim/features/home/filtering/steps/salary/provider/salary_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
@@ -77,21 +77,21 @@ class _SalaryStepState extends State<SalaryStep> {
         Expanded(
             child: Consumer<SalaryProvider>(
                 builder: (context, provider, __){
-                  final salaries = provider.salary;
-                  return ListView(
-                    children: salaries.entries.map((entry){
-                      return Align(
-                        alignment: Alignment.centerLeft,
-                        child: SelectableContainer(
-                            entryValue: entry.value,
-                            onPressed: (){
-                              provider.toggleSalary(entry.key);
-                            },
-                            entryKey: entry.key
-                        ),
-                      );
-                    }).toList(),
+                  return Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 1.h),
+                    child: const Wrap(
+                      spacing: 6.0,
+                      runSpacing: 4.0,
+                      children: [
+                        FilterChipWidget(chipName: "3.000.000 so'm", type: 'salary'),
+                        FilterChipWidget(chipName: "3.500.000 so'm", type: 'salary'),
+                        FilterChipWidget(chipName: "4.000.000 so'm", type: 'salary'),
+                        FilterChipWidget(chipName: "4.500.000 so'm", type: 'salary'),
+                        FilterChipWidget(chipName: "5.000.000 so'm", type: 'salary'),
+                      ],
+                    ),
                   );
+
                 }
             )
         ),

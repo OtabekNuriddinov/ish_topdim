@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ish_topdim/features/home/filtering/components/filter_chip.dart';
 import 'package:ish_topdim/features/home/filtering/steps/for_whom/provider/for_whom_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../../../core/theme/themes.dart';
-import '../../components/selectable_container.dart';
 
 class ForWhomStep extends StatefulWidget {
   final VoidCallback onNext;
@@ -76,22 +76,15 @@ class _ForWhomStepState extends State<ForWhomStep> {
           ),
           Expanded(
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 4.w),
+              padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 1.h),
               child: Consumer<ForWhomProvider>(builder: (context, provider, __) {
-                final gender = provider.gender;
-                return ListView(
-                  children: gender.entries.map((entry) {
-                    return Align(
-                        alignment: Alignment.centerLeft,
-                        child: SelectableContainer(
-                          entryValue: entry.value,
-                          onPressed: (){
-                            provider.toggleGender(entry.key);
-                          },
-                          entryKey: entry.key,
-                        )
-                    );
-                  }).toList(),
+                return const Wrap(
+                  spacing: 6.0,
+                  runSpacing: 4.0,
+                  children: [
+                    FilterChipWidget(chipName: "Erkak Kishi", type: 'gender'),
+                    FilterChipWidget(chipName: "Ayol Kishi", type: 'gender')
+                  ],
                 );
               }),
             ),

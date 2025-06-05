@@ -24,7 +24,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     return Scaffold(
       extendBodyBehindAppBar: false,
       appBar: AppBar(
-
         elevation: 0,
         leading: MainBackButton(onPressed: () {
           context.pop(context);
@@ -61,7 +60,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     ),
                   ),
                 ),
-                SizedBox(height: 6.h),
+                SizedBox(height: 5.h),
                 Text(
                   AppTexts.name,
                   style: GoogleFonts.inter(
@@ -116,27 +115,27 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   isOrange: false,
                   text: AppTexts.register,
                   onPressed: () {
-                    context.go("/home");
+                    context.go("/onboarding/oneStep/registration/otp");
                   },
                 ),
-                SizedBox(height: 7.h),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SocialIcons(
-                        iconPath: "assets/icons/google_icon.svg",
-                        onPressed: () {}),
-                    SizedBox(width: 4.w),
-                    SocialIcons(
-                        iconPath: "assets/icons/apple_icon.svg",
-                        onPressed: () {}),
-                    SizedBox(width: 4.w),
-                    SocialIcons(
-                        iconPath: "assets/icons/facebook_icon.svg",
-                        onPressed: () {}),
-                  ],
-                ),
-                SizedBox(height: 1.7.h),
+                SizedBox(height: 4.h),
+                /// KEYINCHALIK Qo'shiladi
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.center,
+                //   children: [
+                //     SocialIcons(
+                //         iconPath: "assets/icons/google_icon.svg",
+                //         onPressed: () {}),
+                //     SizedBox(width: 4.w),
+                //     SocialIcons(
+                //         iconPath: "assets/icons/apple_icon.svg",
+                //         onPressed: () {}),
+                //     SizedBox(width: 4.w),
+                //     SocialIcons(
+                //         iconPath: "assets/icons/facebook_icon.svg",
+                //         onPressed: () {}),
+                //   ],
+                // ),
                 Align(
                   alignment: Alignment.center,
                   child: MyRichText(
